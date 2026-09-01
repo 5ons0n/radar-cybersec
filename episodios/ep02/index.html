@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Fontes e referências do Episódio 02 do RADAR CYBERSEC, de 25 a 31 de agosto de 2026.">
+  <title>Episódio 02 — Fontes | RADAR CYBERSEC</title>
+  <style>
+    :root { color-scheme:dark; --bg:#050914; --panel:#09152a; --panel2:#0b1c37; --line:rgba(80,190,255,.22); --line-strong:rgba(84,241,255,.48); --text:#e8f4ff; --muted:#91a9bf; --blue:#21b8ff; --cyan:#54f1ff; --violet:#8878ff; --max:1060px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 80% 0,rgba(33,184,255,.15),transparent 30rem),radial-gradient(circle at 0 60%,rgba(136,120,255,.09),transparent 34rem),var(--bg); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.15; background-image:linear-gradient(rgba(84,241,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(84,241,255,.07) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:850; letter-spacing:.08em; }
+    .brand-mark { width:32px; height:32px; border:1px solid var(--cyan); border-radius:50%; position:relative; box-shadow:0 0 22px rgba(84,241,255,.25); }
+    .brand-mark::before { content:""; position:absolute; inset:7px; border:1px solid rgba(84,241,255,.5); border-radius:50%; }
+    .nav-actions { display:flex; align-items:center; gap:18px; }
+    .back { color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .back:hover,.back:focus-visible { color:var(--cyan); }
+    .hero { padding:88px 0 66px; border-bottom:1px solid var(--line); }
+    .kicker { display:inline-flex; align-items:center; gap:10px; color:var(--cyan); font-size:.78rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .kicker::before { content:""; width:28px; height:1px; background:currentColor; box-shadow:0 0 8px currentColor; }
+    h1 { max-width:920px; margin:18px 0 22px; font-size:clamp(2.7rem,7vw,5.7rem); line-height:.98; letter-spacing:-.06em; }
+    .intro { max-width:820px; margin:0; color:#aec4d7; font-size:clamp(1.04rem,2vw,1.2rem); line-height:1.74; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .chip { padding:7px 11px; border:1px solid var(--line); border-radius:999px; color:#b3cde0; background:rgba(33,184,255,.05); font-size:.79rem; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:690px; margin-top:30px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(7,17,34,.62); }
+    .stat { padding:16px 18px; border-right:1px solid var(--line); }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; color:var(--cyan); font-size:1.35rem; line-height:1; }
+    .stat span { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:54px; padding:70px 0 92px; }
+    .toc { position:sticky; top:24px; align-self:start; padding:19px; border:1px solid var(--line); border-radius:14px; background:rgba(7,17,34,.82); backdrop-filter:blur(10px); }
+    .toc b { display:block; margin-bottom:11px; color:var(--cyan); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+    .toc a { display:flex; justify-content:space-between; gap:10px; padding:9px 0; color:var(--muted); text-decoration:none; font-size:.9rem; border-bottom:1px solid rgba(80,190,255,.1); }
+    .toc a:last-child { border-bottom:0; }
+    .toc a:hover,.toc a:focus-visible { color:var(--cyan); }
+    .toc small { color:#66839a; font-size:.75rem; }
+    .content section { scroll-margin-top:24px; margin-bottom:54px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+    h2 { margin:0; font-size:clamp(1.6rem,3vw,2.3rem); letter-spacing:-.035em; }
+    .count { flex:0 0 auto; color:var(--cyan); font-size:.72rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .section-note { margin:0 0 20px; color:var(--muted); line-height:1.62; }
+    .source-list { display:grid; gap:12px; }
+    .source { position:relative; display:grid; grid-template-columns:46px 1fr auto; gap:16px; align-items:center; padding:19px; border:1px solid var(--line); border-radius:14px; text-decoration:none; background:linear-gradient(135deg,rgba(11,28,55,.9),rgba(7,16,32,.75)); transition:transform .18s ease,border-color .18s ease,background .18s ease; }
+    .source:hover,.source:focus-visible { transform:translateY(-2px); border-color:var(--line-strong); background:linear-gradient(135deg,rgba(13,38,71,.96),rgba(7,19,38,.9)); outline:none; }
+    .source-num { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(84,241,255,.26); border-radius:11px; color:var(--cyan); font-size:.78rem; font-weight:850; background:rgba(33,184,255,.06); }
+    .source strong { display:block; margin-bottom:5px; line-height:1.35; }
+    .source small { color:var(--muted); line-height:1.45; }
+    .arrow { color:var(--cyan); font-size:1.2rem; }
+    .notice { padding:20px; border-left:3px solid var(--cyan); border-radius:0 12px 12px 0; background:rgba(33,184,255,.07); color:#b6cadb; line-height:1.65; }
+    .notice strong { color:var(--text); }
+    .tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .tag { padding:7px 11px; border:1px solid var(--line); border-radius:8px; color:#a9c5d9; background:rgba(84,241,255,.035); font-size:.8rem; }
+    .episode-nav { display:flex; justify-content:space-between; gap:16px; margin-top:34px; }
+    .episode-nav a { padding:12px 15px; border:1px solid var(--line); border-radius:10px; color:#b6ccdc; text-decoration:none; background:rgba(9,21,42,.7); }
+    .episode-nav a:hover,.episode-nav a:focus-visible { color:var(--cyan); border-color:var(--line-strong); }
+    footer { padding:32px 0 44px; border-top:1px solid var(--line); color:var(--muted); }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.source{transition:none}}
+    @media(max-width:780px){.layout{grid-template-columns:1fr;gap:30px}.toc{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}.toc b{grid-column:1/-1}.hero{padding:65px 0 50px}.source{grid-template-columns:42px 1fr}.arrow{display:none}.nav-actions a:first-child{display:none}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}.brand{font-size:.84rem}.back{font-size:.82rem}.hero{padding-top:52px}.layout{padding-top:48px}.toc{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.source{padding:16px;gap:12px}.source small{font-size:.76rem}.section-head{display:block}.count{display:block;margin-top:8px}.episode-nav{flex-direction:column}.footer-inner{display:block}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="../../" aria-label="RADAR CYBERSEC — início"><span class="brand-mark" aria-hidden="true"></span>RADAR CYBERSEC</a>
+    <div class="nav-actions"><a class="back" href="../ep01/">← Episódio 01</a><a class="back" href="../../">Voltar à home</a></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker">Episódio 02 · Fontes</div>
+        <h1>Soberania, compute e resiliência: a nova infraestrutura da IA</h1>
+        <p class="intro">Referências utilizadas no compilado semanal de <strong>terça-feira, 25 de agosto, a segunda-feira, 31 de agosto de 2026</strong>. O radar prioriza o Brasil e inclui apenas acontecimentos internacionais de alto impacto.</p>
+        <div class="hero-meta"><span class="chip">Cybersecurity</span><span class="chip">Cloud & soberania</span><span class="chip">Datacenters</span><span class="chip">Inteligência Artificial</span><span class="chip">Mercado de TI</span><span class="chip">Brasil</span></div>
+        <div class="stats" aria-label="Resumo da curadoria"><div class="stat"><strong>16</strong><span>fontes abertas</span></div><div class="stat"><strong>12</strong><span>eventos consolidados</span></div><div class="stat"><strong>7 dias</strong><span>25–31 de agosto</span></div></div>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <aside class="toc" aria-label="Índice das fontes"><b>Neste radar</b><a href="#brasil"><span>Brasil & infraestrutura</span><small>05</small></a><a href="#cyber"><span>Cybersecurity</span><small>04</small></a><a href="#ia"><span>IA, cloud & datacenters</span><small>05</small></a><a href="#mercado"><span>Mercado & liderança</span><small>02</small></a><a href="#nota"><span>Nota editorial</span></a></aside>
+      <div class="content">
+        <section id="brasil">
+          <div class="section-head"><h2>Brasil & infraestrutura digital</h2><span class="count">5 fontes</span></div>
+          <p class="section-note">Capacidade nacional de cloud, jurisdição de dados, investimento industrial e continuidade de serviços públicos críticos.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.gov.br/mdic/pt-br/assuntos/noticias/2026-periodo-eleitoral/agosto/czpe-aprova-r-206-bi-de-investimentos-industriais-e-de-servicos-no-ceara-maranhao-e-piaui" target="_blank" rel="noopener noreferrer"><span class="source-num">01</span><span><strong>CZPE aprova datacenter da Voltalia no Complexo do Pecém</strong><small>MDIC / Governo Federal · 26 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.serpro.gov.br/menu/noticias/noticias-2026/forum-rnp-2026/" target="_blank" rel="noopener noreferrer"><span class="source-num">02</span><span><strong>Nuvem de Governo reforça soberania e jurisdição brasileira sobre dados públicos</strong><small>Serpro · 26 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.alibabacloud.com/blog/alibaba-cloud-launches-first-cloud-region-in-brazil-to-accelerate-cloud-and-ai-transformation_603507" target="_blank" rel="noopener noreferrer"><span class="source-num">03</span><span><strong>Alibaba Cloud anuncia sua primeira região de cloud no Brasil</strong><small>Alibaba Cloud · 27 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/tse-inicia-migracao-de-servicos-em-nuvem-neste-domingo-30" target="_blank" rel="noopener noreferrer"><span class="source-num">04</span><span><strong>TSE inicia migração de serviços para novo provedor de nuvem</strong><small>Tribunal Superior Eleitoral · 29 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.gov.br/mj/pt-br/assuntos/noticias-1/especialistas-apontam-vantagens-competitivas-na-corrida-pela-autonomia-digital-no-brasil" target="_blank" rel="noopener noreferrer"><span class="source-num">05</span><span><strong>Especialistas discutem vantagens competitivas do Brasil na autonomia digital</strong><small>MJSP / Governo Federal · 26 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="cyber">
+          <div class="section-head"><h2>Cybersecurity, privacidade & ameaças</h2><span class="count">4 fontes</span></div>
+          <p class="section-note">Proteção de dados de crianças, vulnerabilidades exploradas ativamente e a aceleração do risco ofensivo com IA.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-multa-tiktok-em-r-153-7-milhoes-por-falhas-na-protecao-de-dados-de-criancas-e-adolescentes" target="_blank" rel="noopener noreferrer"><span class="source-num">06</span><span><strong>ANPD multa TikTok por falhas na proteção de dados de crianças e adolescentes</strong><small>ANPD / Governo Federal · 25 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.cisa.gov/news-events/alerts/2026/08/27/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer"><span class="source-num">07</span><span><strong>CISA adiciona três vulnerabilidades exploradas ao catálogo KEV</strong><small>CISA · 27 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.investing.com/news/stock-market-news/major-tech-companies-call-for-defensive-surge-to-defeat-aidriven-hacks-4879958" target="_blank" rel="noopener noreferrer"><span class="source-num">08</span><span><strong>Empresas de tecnologia pedem mobilização defensiva contra ataques orientados por IA</strong><small>Reuters, via Investing.com · 27 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.fsb.org/2026/08/fsb-chairs-letter-to-g20-finance-ministers-and-central-bank-governors-august-2026/" target="_blank" rel="noopener noreferrer"><span class="source-num">09</span><span><strong>FSB alerta o G20 sobre IA de fronteira e risco cibernético sistêmico</strong><small>Financial Stability Board · 31 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="ia">
+          <div class="section-head"><h2>IA, cloud & datacenters</h2><span class="count">5 fontes</span></div>
+          <p class="section-note">Compute, resfriamento, expansão de ecossistemas e infraestrutura para workloads agênticos e de IA física.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.serpro.gov.br/menu/noticias/noticias-2026/serpro-lanca-ia-brasil/" target="_blank" rel="noopener noreferrer"><span class="source-num">10</span><span><strong>Serpro lança IA Brasil, plataforma nacional de inteligência artificial</strong><small>Serpro · 27 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://openai.com/index/expanding-our-presence-in-brazil/" target="_blank" rel="noopener noreferrer"><span class="source-num">11</span><span><strong>OpenAI amplia presença comercial no Brasil</strong><small>OpenAI · 27 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.slb.com/newsroom/press-release/2026/pr-2026-0831" target="_blank" rel="noopener noreferrer"><span class="source-num">12</span><span><strong>SLB anuncia aquisição da Kelvion e avança em cooling para datacenters</strong><small>SLB · 31 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027" target="_blank" rel="noopener noreferrer"><span class="source-num">13</span><span><strong>NVIDIA divulga resultados do segundo trimestre fiscal de 2027</strong><small>NVIDIA · 26 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://investor.nvidia.com/news/press-release-details/2026/AWS-and-NVIDIA-to-Deliver-2-Million-Additional-GPUs-and-Next-Generation-Infrastructure-for-Agentic-and-Physical-AI/default.aspx" target="_blank" rel="noopener noreferrer"><span class="source-num">14</span><span><strong>AWS e NVIDIA planejam 2 milhões de GPUs adicionais para IA agêntica e física</strong><small>NVIDIA / AWS · 26 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="mercado">
+          <div class="section-head"><h2>Mercado, carreira & liderança</h2><span class="count">2 fontes</span></div>
+          <p class="section-note">Investimento bancário em tecnologia, qualificação e a mudança das prioridades executivas para IA, dados e cloud.</p>
+          <div class="source-list">
+            <a class="source" href="https://portal.febraban.org.br/noticia/4490/pt-br/" target="_blank" rel="noopener noreferrer"><span class="source-num">15</span><span><strong>Bancos ampliam investimentos em IA, dados e cloud</strong><small>Febraban · 25 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://portal.febraban.org.br/noticia/4491/pt-br/" target="_blank" rel="noopener noreferrer"><span class="source-num">16</span><span><strong>Febraban Tech encerra edição com visão consolidada sobre inovação no setor financeiro</strong><small>Febraban · 27 ago 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="nota">
+          <h2>Nota editorial</h2>
+          <div class="notice"><strong>Transparência:</strong> esta página reúne as 16 referências que sustentaram os 12 eventos consolidados no relatório do Episódio 02. Publicações repetidas sobre o mesmo fato foram deduplicadas; links externos podem ser atualizados, movidos ou ficar sujeitos às políticas de acesso de seus respectivos publicadores.</div>
+          <div class="tags" style="margin-top:22px"><span class="tag">#RadarCyberSec</span><span class="tag">#Cybersecurity</span><span class="tag">#CloudComputing</span><span class="tag">#Datacenter</span><span class="tag">#InteligenciaArtificial</span><span class="tag">#SoberaniaDigital</span><span class="tag">#CyberResilience</span><span class="tag">#AIInfrastructure</span><span class="tag">#Brasil</span></div>
+          <nav class="episode-nav" aria-label="Navegação entre episódios"><a href="../ep01/">← Fontes do Episódio 01</a><a href="../../">Todos os episódios →</a></nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© 2026 RADAR CYBERSEC</span><a class="back" href="../../">radar-cybersec / início</a></div></footer>
+</body>
+</html>
