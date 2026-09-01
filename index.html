@@ -7,126 +7,69 @@
   <meta name="description" content="RADAR CYBERSEC — briefing semanal sobre Cybersecurity, Cloud, infraestrutura, datacenters, IA e mercado de tecnologia.">
   <title>RADAR CYBERSEC — Tecnologia sem hype</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #050914;
-      --panel: rgba(10, 22, 45, .74);
-      --line: rgba(80, 190, 255, .22);
-      --text: #e8f4ff;
-      --muted: #90a9bf;
-      --blue: #21b8ff;
-      --cyan: #54f1ff;
-      --violet: #7b6cff;
-      --max: 1120px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 75% 12%, rgba(33, 184, 255, .15), transparent 27rem),
-        radial-gradient(circle at 8% 85%, rgba(123, 108, 255, .12), transparent 30rem),
-        var(--bg);
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .18;
-      background-image:
-        linear-gradient(rgba(84, 241, 255, .07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(84, 241, 255, .07) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(to bottom, black, transparent 78%);
-    }
-    a { color: inherit; }
-    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 850; letter-spacing: .08em; }
-    .brand-mark {
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--cyan); position: relative;
-      box-shadow: 0 0 24px rgba(84, 241, 255, .25), inset 0 0 16px rgba(33, 184, 255, .12);
-    }
-    .brand-mark::before, .brand-mark::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(84, 241, 255, .45); }
-    .brand-mark::before { inset: 6px; }
-    .brand-mark::after { width: 4px; height: 4px; background: var(--cyan); border: 0; top: 7px; right: 7px; box-shadow: 0 0 10px var(--cyan); }
-    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: .94rem; }
-    .nav-links a { text-decoration: none; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--cyan); }
-    .hero { min-height: 670px; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 64px; padding-block: 86px; }
-    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--cyan); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; box-shadow: 0 0 8px currentColor; }
-    h1 { margin: 19px 0 22px; font-size: clamp(3.1rem, 7.5vw, 6.8rem); line-height: .88; letter-spacing: -.065em; }
-    h1 span { display: block; color: transparent; -webkit-text-stroke: 1px rgba(84, 241, 255, .8); text-shadow: 0 0 34px rgba(33, 184, 255, .16); }
-    .lede { max-width: 690px; margin: 0; color: #adc3d6; font-size: clamp(1.05rem, 2vw, 1.24rem); line-height: 1.72; }
-    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 49px; padding: 0 21px; border-radius: 10px; text-decoration: none; font-weight: 760; border: 1px solid var(--line); background: rgba(9, 20, 39, .8); }
-    .button.primary { color: #00121d; background: linear-gradient(135deg, var(--cyan), var(--blue)); border-color: transparent; box-shadow: 0 12px 36px rgba(33, 184, 255, .18); }
-    .button:hover, .button:focus-visible { transform: translateY(-2px); filter: brightness(1.08); }
-    .radar { position: relative; aspect-ratio: 1; width: min(100%, 430px); margin-inline: auto; border: 1px solid rgba(84, 241, 255, .28); border-radius: 50%; box-shadow: 0 0 80px rgba(33, 184, 255, .12), inset 0 0 50px rgba(33, 184, 255, .08); background: radial-gradient(circle, rgba(84, 241, 255, .09), transparent 58%); }
-    .radar::before { content: ""; position: absolute; inset: 16%; border: 1px solid rgba(84, 241, 255, .23); border-radius: 50%; box-shadow: 0 0 0 58px rgba(84, 241, 255, .02), 0 0 0 59px rgba(84, 241, 255, .12); }
-    .radar::after { content: ""; position: absolute; inset: 50% 0 0 50%; border-left: 1px solid rgba(84, 241, 255, .24); border-top: 1px solid rgba(84, 241, 255, .24); transform-origin: left top; background: conic-gradient(from 270deg, rgba(84, 241, 255, .28), transparent 27%); animation: sweep 8s linear infinite; }
-    .radar-core { position: absolute; inset: 49%; z-index: 2; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 22px var(--cyan); }
-    .signal { position: absolute; z-index: 3; width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 16px var(--cyan); }
-    .signal.s1 { top: 27%; left: 66%; } .signal.s2 { top: 61%; left: 25%; } .signal.s3 { top: 73%; left: 70%; }
-    @keyframes sweep { to { transform: rotate(360deg); } }
-    .section { padding: 88px 0; border-top: 1px solid var(--line); }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 30px; }
-    h2 { margin: 10px 0 0; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.045em; }
-    .section-head p { max-width: 500px; margin: 0; color: var(--muted); line-height: 1.65; }
-    .episode-card { display: grid; grid-template-columns: 180px 1fr auto; gap: 28px; align-items: center; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(135deg, rgba(11, 27, 52, .9), rgba(7, 15, 30, .75)); box-shadow: 0 24px 70px rgba(0, 0, 0, .18); }
-    .episode-number { display: grid; place-items: center; aspect-ratio: 1; border-radius: 15px; font-size: 3.4rem; font-weight: 900; letter-spacing: -.08em; color: var(--cyan); background: radial-gradient(circle at 50% 40%, rgba(84, 241, 255, .16), rgba(4, 13, 28, .8)); border: 1px solid rgba(84, 241, 255, .24); }
-    .meta { color: var(--cyan); font-size: .8rem; letter-spacing: .14em; font-weight: 800; text-transform: uppercase; }
-    .episode-card h3 { margin: 8px 0 10px; font-size: clamp(1.45rem, 3vw, 2.1rem); }
-    .episode-card p { margin: 0; color: var(--muted); line-height: 1.65; }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .pill { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: #a9c7da; font-size: .77rem; background: rgba(33, 184, 255, .045); }
-    .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .promise { padding: 25px; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); }
-    .promise b { display: block; color: var(--cyan); font-size: .82rem; letter-spacing: .1em; margin-bottom: 10px; }
-    .promise p { margin: 0; color: var(--muted); line-height: 1.62; }
-    footer { padding: 34px 0 48px; color: var(--muted); border-top: 1px solid var(--line); }
-    .footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .radar::after { animation: none; } }
-    @media (max-width: 800px) {
-      .nav-links a:not(:last-child) { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 70px; gap: 58px; }
-      .radar { width: min(82vw, 360px); }
-      .section-head { display: block; } .section-head p { margin-top: 15px; }
-      .episode-card { grid-template-columns: 92px 1fr; } .episode-card > .button { grid-column: 1 / -1; }
-      .promise-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px) {
-      .wrap { width: min(calc(100% - 28px), var(--max)); }
-      .brand { font-size: .86rem; }
-      .hero { padding-block: 54px; }
-      h1 { font-size: clamp(3rem, 18vw, 5rem); }
-      .episode-card { grid-template-columns: 1fr; padding: 20px; }
-      .episode-number { width: 76px; }
-      .footer-inner { display: block; }
-    }
+    :root { color-scheme:dark; --bg:#050914; --panel:rgba(10,22,45,.74); --line:rgba(80,190,255,.22); --line-strong:rgba(84,241,255,.52); --text:#e8f4ff; --muted:#90a9bf; --blue:#21b8ff; --cyan:#54f1ff; --violet:#7b6cff; --max:1120px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 75% 12%,rgba(33,184,255,.15),transparent 27rem),radial-gradient(circle at 8% 85%,rgba(123,108,255,.12),transparent 30rem),var(--bg); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.18; background-image:linear-gradient(rgba(84,241,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(84,241,255,.07) 1px,transparent 1px); background-size:44px 44px; mask-image:linear-gradient(to bottom,black,transparent 78%); }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .nav { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:850; letter-spacing:.08em; }
+    .brand-mark { width:34px; height:34px; border-radius:50%; border:1px solid var(--cyan); position:relative; box-shadow:0 0 24px rgba(84,241,255,.25),inset 0 0 16px rgba(33,184,255,.12); }
+    .brand-mark::before,.brand-mark::after { content:""; position:absolute; border-radius:50%; border:1px solid rgba(84,241,255,.45); }
+    .brand-mark::before { inset:6px; }
+    .brand-mark::after { width:4px; height:4px; background:var(--cyan); border:0; top:7px; right:7px; box-shadow:0 0 10px var(--cyan); }
+    .nav-links { display:flex; align-items:center; gap:24px; color:var(--muted); font-size:.94rem; }
+    .nav-links a { text-decoration:none; }
+    .nav-links a:hover,.nav-links a:focus-visible { color:var(--cyan); }
+    .hero { min-height:670px; display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:64px; padding-block:86px; }
+    .eyebrow { display:inline-flex; gap:9px; align-items:center; color:var(--cyan); font-size:.78rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:28px; height:1px; background:currentColor; box-shadow:0 0 8px currentColor; }
+    h1 { margin:19px 0 22px; font-size:clamp(3.1rem,7.5vw,6.8rem); line-height:.88; letter-spacing:-.065em; }
+    h1 span { display:block; color:transparent; -webkit-text-stroke:1px rgba(84,241,255,.8); text-shadow:0 0 34px rgba(33,184,255,.16); }
+    .lede { max-width:690px; margin:0; color:#adc3d6; font-size:clamp(1.05rem,2vw,1.24rem); line-height:1.72; }
+    .actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:34px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:49px; padding:0 21px; border-radius:10px; text-decoration:none; font-weight:760; border:1px solid var(--line); background:rgba(9,20,39,.8); transition:transform .18s ease,filter .18s ease,border-color .18s ease; }
+    .button.primary { color:#00121d; background:linear-gradient(135deg,var(--cyan),var(--blue)); border-color:transparent; box-shadow:0 12px 36px rgba(33,184,255,.18); }
+    .button:hover,.button:focus-visible { transform:translateY(-2px); filter:brightness(1.08); }
+    .radar { position:relative; aspect-ratio:1; width:min(100%,430px); margin-inline:auto; border:1px solid rgba(84,241,255,.28); border-radius:50%; box-shadow:0 0 80px rgba(33,184,255,.12),inset 0 0 50px rgba(33,184,255,.08); background:radial-gradient(circle,rgba(84,241,255,.09),transparent 58%); }
+    .radar::before { content:""; position:absolute; inset:16%; border:1px solid rgba(84,241,255,.23); border-radius:50%; box-shadow:0 0 0 58px rgba(84,241,255,.02),0 0 0 59px rgba(84,241,255,.12); }
+    .radar::after { content:""; position:absolute; inset:50% 0 0 50%; border-left:1px solid rgba(84,241,255,.24); border-top:1px solid rgba(84,241,255,.24); transform-origin:left top; background:conic-gradient(from 270deg,rgba(84,241,255,.28),transparent 27%); animation:sweep 8s linear infinite; }
+    .radar-core { position:absolute; inset:49%; z-index:2; border-radius:50%; background:var(--cyan); box-shadow:0 0 22px var(--cyan); }
+    .signal { position:absolute; z-index:3; width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 16px var(--cyan); }
+    .signal.s1 { top:27%; left:66%; } .signal.s2 { top:61%; left:25%; } .signal.s3 { top:73%; left:70%; }
+    @keyframes sweep { to { transform:rotate(360deg); } }
+    .section { padding:88px 0; border-top:1px solid var(--line); }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:32px; margin-bottom:30px; }
+    h2 { margin:10px 0 0; font-size:clamp(2rem,4vw,3.5rem); letter-spacing:-.045em; }
+    .section-head p { max-width:500px; margin:0; color:var(--muted); line-height:1.65; }
+    .episode-list { display:grid; gap:18px; }
+    .episode-card { position:relative; display:grid; grid-template-columns:180px 1fr auto; gap:28px; align-items:center; padding:28px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(135deg,rgba(11,27,52,.9),rgba(7,15,30,.75)); box-shadow:0 24px 70px rgba(0,0,0,.18); }
+    .episode-card.is-latest { border-color:var(--line-strong); box-shadow:0 24px 70px rgba(0,0,0,.2),0 0 44px rgba(33,184,255,.07); }
+    .latest-badge { position:absolute; top:-10px; right:22px; padding:5px 10px; border-radius:999px; color:#00121d; background:linear-gradient(135deg,var(--cyan),var(--blue)); font-size:.7rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+    .episode-number { display:grid; place-items:center; aspect-ratio:1; border-radius:15px; font-size:3.4rem; font-weight:900; letter-spacing:-.08em; color:var(--cyan); background:radial-gradient(circle at 50% 40%,rgba(84,241,255,.16),rgba(4,13,28,.8)); border:1px solid rgba(84,241,255,.24); }
+    .meta { color:var(--cyan); font-size:.8rem; letter-spacing:.14em; font-weight:800; text-transform:uppercase; }
+    .episode-card h3 { margin:8px 0 10px; font-size:clamp(1.45rem,3vw,2.1rem); }
+    .episode-card p { margin:0; color:var(--muted); line-height:1.65; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+    .pill { padding:6px 10px; border:1px solid var(--line); border-radius:999px; color:#a9c7da; font-size:.77rem; background:rgba(33,184,255,.045); }
+    .promise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .promise { padding:25px; border:1px solid var(--line); border-radius:15px; background:var(--panel); }
+    .promise b { display:block; color:var(--cyan); font-size:.82rem; letter-spacing:.1em; margin-bottom:10px; }
+    .promise p { margin:0; color:var(--muted); line-height:1.62; }
+    footer { padding:34px 0 48px; color:var(--muted); border-top:1px solid var(--line); }
+    .footer-inner { display:flex; justify-content:space-between; gap:24px; align-items:center; }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.radar::after{animation:none}.button{transition:none}}
+    @media(max-width:800px){.nav-links a:not(:last-child){display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-block:70px;gap:58px}.radar{width:min(82vw,360px)}.section-head{display:block}.section-head p{margin-top:15px}.episode-card{grid-template-columns:92px 1fr}.episode-card>.button{grid-column:1/-1}.promise-grid{grid-template-columns:1fr}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}.brand{font-size:.86rem}.hero{padding-block:54px}h1{font-size:clamp(3rem,18vw,5rem)}.episode-card{grid-template-columns:1fr;padding:20px}.episode-number{width:76px}.latest-badge{right:14px}.footer-inner{display:block}}
   </style>
 </head>
 <body>
   <header class="wrap nav">
     <a class="brand" href="./" aria-label="RADAR CYBERSEC — início"><span class="brand-mark" aria-hidden="true"></span>RADAR CYBERSEC</a>
-    <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#episodios">Episódios</a>
-      <a href="#manifesto">Manifesto</a>
-      <a href="episodios/ep01/">Fontes do EP01</a>
-    </nav>
+    <nav class="nav-links" aria-label="Navegação principal"><a href="#episodios">Episódios</a><a href="#manifesto">Manifesto</a><a href="episodios/ep02/">Fontes do EP02</a></nav>
   </header>
 
   <main>
@@ -135,41 +78,34 @@
         <div class="eyebrow">Briefing semanal</div>
         <h1>RADAR <span>CYBERSEC</span></h1>
         <p class="lede">Cybersecurity, Cloud, infraestrutura, datacenters, IA e mercado de TI analisados sem hype e com foco no Brasil. O que aconteceu, por que importa e o que vem por aí.</p>
-        <div class="actions">
-          <a class="button primary" href="episodios/ep01/">Explorar o Episódio 01</a>
-          <a class="button" href="#manifesto">Conhecer o programa</a>
-        </div>
+        <div class="actions"><a class="button primary" href="episodios/ep02/">Explorar o Episódio 02</a><a class="button" href="#manifesto">Conhecer o programa</a></div>
       </div>
       <div class="radar" aria-hidden="true"><span class="radar-core"></span><span class="signal s1"></span><span class="signal s2"></span><span class="signal s3"></span></div>
     </section>
 
     <section class="section" id="episodios">
       <div class="wrap">
-        <div class="section-head">
-          <div><div class="eyebrow">Último sinal</div><h2>Episódios</h2></div>
-          <p>Cada edição conecta notícia, contexto técnico e impacto prático — com as fontes abertas para você aprofundar.</p>
+        <div class="section-head"><div><div class="eyebrow">Último sinal</div><h2>Episódios</h2></div><p>Cada edição conecta notícia, contexto técnico e impacto prático — com as fontes abertas para você aprofundar.</p></div>
+        <div class="episode-list">
+          <article class="episode-card is-latest">
+            <span class="latest-badge">Novo</span>
+            <div class="episode-number" aria-hidden="true">02</div>
+            <div><div class="meta">25–31 agosto 2026</div><h3>Soberania, compute e resiliência: a nova infraestrutura da IA</h3><p>Cloud no Brasil, migração do TSE, vulnerabilidades exploradas, risco cibernético com IA, expansão de GPUs e cooling para datacenters.</p><div class="pill-row"><span class="pill">Cybersecurity</span><span class="pill">Cloud</span><span class="pill">Datacenter</span><span class="pill">IA</span><span class="pill">Soberania digital</span><span class="pill">Brasil</span></div></div>
+            <a class="button primary" href="episodios/ep02/">Ver fontes →</a>
+          </article>
+          <article class="episode-card">
+            <div class="episode-number" aria-hidden="true">01</div>
+            <div><div class="meta">18–24 agosto 2026</div><h3>O que realmente importa em tecnologia e segurança</h3><p>Infraestrutura soberana de IA, pressão energética dos datacenters, NetScaler, Grandoreiro, multicloud privado e a nova economia dos agentes.</p><div class="pill-row"><span class="pill">Cybersecurity</span><span class="pill">Cloud</span><span class="pill">Datacenter</span><span class="pill">IA</span><span class="pill">Brasil</span></div></div>
+            <a class="button" href="episodios/ep01/">Ver fontes →</a>
+          </article>
         </div>
-        <article class="episode-card">
-          <div class="episode-number" aria-hidden="true">01</div>
-          <div>
-            <div class="meta">18–24 agosto 2026</div>
-            <h3>O que realmente importa em tecnologia e segurança</h3>
-            <p>Infraestrutura soberana de IA, pressão energética dos datacenters, NetScaler, Grandoreiro, multicloud privado e a nova economia dos agentes.</p>
-            <div class="pill-row"><span class="pill">Cybersecurity</span><span class="pill">Cloud</span><span class="pill">Datacenter</span><span class="pill">IA</span><span class="pill">Brasil</span></div>
-          </div>
-          <a class="button primary" href="episodios/ep01/">Ver fontes →</a>
-        </article>
       </div>
     </section>
 
     <section class="section" id="manifesto">
       <div class="wrap">
         <div class="section-head"><div><div class="eyebrow">Nosso filtro</div><h2>Menos ruído. Mais contexto.</h2></div></div>
-        <div class="promise-grid">
-          <article class="promise"><b>01 / O QUE ACONTECEU</b><p>Curadoria dos movimentos mais relevantes da semana, com o Brasil no centro do radar.</p></article>
-          <article class="promise"><b>02 / POR QUE IMPORTA</b><p>Leitura técnica e executiva para conectar segurança, infraestrutura, custo e negócio.</p></article>
-          <article class="promise"><b>03 / O QUE OBSERVAR</b><p>Sinais, riscos e oportunidades que merecem acompanhamento na semana seguinte.</p></article>
-        </div>
+        <div class="promise-grid"><article class="promise"><b>01 / O QUE ACONTECEU</b><p>Curadoria dos movimentos mais relevantes da semana, com o Brasil no centro do radar.</p></article><article class="promise"><b>02 / POR QUE IMPORTA</b><p>Leitura técnica e executiva para conectar segurança, infraestrutura, custo e negócio.</p></article><article class="promise"><b>03 / O QUE OBSERVAR</b><p>Sinais, riscos e oportunidades que merecem acompanhamento na semana seguinte.</p></article></div>
       </div>
     </section>
   </main>
