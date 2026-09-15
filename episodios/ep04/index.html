@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Fontes e referências do Episódio 04 do RADAR CYBERSEC, de 8 a 14 de setembro de 2026.">
+  <title>Episódio 04 — Fontes | RADAR CYBERSEC</title>
+  <style>
+    :root { color-scheme:dark; --bg:#050914; --panel:#09152a; --panel2:#0b1c37; --line:rgba(80,190,255,.22); --line-strong:rgba(84,241,255,.48); --text:#e8f4ff; --muted:#91a9bf; --blue:#21b8ff; --cyan:#54f1ff; --violet:#8878ff; --max:1060px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 80% 0,rgba(33,184,255,.15),transparent 30rem),radial-gradient(circle at 0 60%,rgba(136,120,255,.09),transparent 34rem),var(--bg); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.15; background-image:linear-gradient(rgba(84,241,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(84,241,255,.07) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:850; letter-spacing:.08em; }
+    .brand-mark { width:32px; height:32px; border:1px solid var(--cyan); border-radius:50%; position:relative; box-shadow:0 0 22px rgba(84,241,255,.25); }
+    .brand-mark::before { content:""; position:absolute; inset:7px; border:1px solid rgba(84,241,255,.5); border-radius:50%; }
+    .nav-actions { display:flex; align-items:center; gap:18px; }
+    .back { color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .back:hover,.back:focus-visible { color:var(--cyan); }
+    .hero { padding:88px 0 66px; border-bottom:1px solid var(--line); }
+    .kicker { display:inline-flex; align-items:center; gap:10px; color:var(--cyan); font-size:.78rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .kicker::before { content:""; width:28px; height:1px; background:currentColor; box-shadow:0 0 8px currentColor; }
+    h1 { max-width:920px; margin:18px 0 22px; font-size:clamp(2.7rem,7vw,5.7rem); line-height:.98; letter-spacing:-.06em; }
+    .intro { max-width:820px; margin:0; color:#aec4d7; font-size:clamp(1.04rem,2vw,1.2rem); line-height:1.74; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .chip { padding:7px 11px; border:1px solid var(--line); border-radius:999px; color:#b3cde0; background:rgba(33,184,255,.05); font-size:.79rem; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:690px; margin-top:30px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(7,17,34,.62); }
+    .stat { padding:16px 18px; border-right:1px solid var(--line); }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; color:var(--cyan); font-size:1.35rem; line-height:1; }
+    .stat span { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:54px; padding:70px 0 92px; }
+    .toc { position:sticky; top:24px; align-self:start; padding:19px; border:1px solid var(--line); border-radius:14px; background:rgba(7,17,34,.82); backdrop-filter:blur(10px); }
+    .toc b { display:block; margin-bottom:11px; color:var(--cyan); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+    .toc a { display:flex; justify-content:space-between; gap:10px; padding:9px 0; color:var(--muted); text-decoration:none; font-size:.9rem; border-bottom:1px solid rgba(80,190,255,.1); }
+    .toc a:last-child { border-bottom:0; }
+    .toc a:hover,.toc a:focus-visible { color:var(--cyan); }
+    .toc small { color:#66839a; font-size:.75rem; }
+    .content section { scroll-margin-top:24px; margin-bottom:54px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+    h2 { margin:0; font-size:clamp(1.6rem,3vw,2.3rem); letter-spacing:-.035em; }
+    .count { flex:0 0 auto; color:var(--cyan); font-size:.72rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .section-note { margin:0 0 20px; color:var(--muted); line-height:1.62; }
+    .source-list { display:grid; gap:12px; }
+    .source { position:relative; display:grid; grid-template-columns:46px 1fr auto; gap:16px; align-items:center; padding:19px; border:1px solid var(--line); border-radius:14px; text-decoration:none; background:linear-gradient(135deg,rgba(11,28,55,.9),rgba(7,16,32,.75)); transition:transform .18s ease,border-color .18s ease,background .18s ease; }
+    .source:hover,.source:focus-visible { transform:translateY(-2px); border-color:var(--line-strong); background:linear-gradient(135deg,rgba(13,38,71,.96),rgba(7,19,38,.9)); outline:none; }
+    .source-num { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(84,241,255,.26); border-radius:11px; color:var(--cyan); font-size:.78rem; font-weight:850; background:rgba(33,184,255,.06); }
+    .source strong { display:block; margin-bottom:5px; line-height:1.35; }
+    .source small { color:var(--muted); line-height:1.45; }
+    .arrow { color:var(--cyan); font-size:1.2rem; }
+    .notice { padding:20px; border-left:3px solid var(--cyan); border-radius:0 12px 12px 0; background:rgba(33,184,255,.07); color:#b6cadb; line-height:1.65; }
+    .notice strong { color:var(--text); }
+    .tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .tag { padding:7px 11px; border:1px solid var(--line); border-radius:8px; color:#a9c5d9; background:rgba(84,241,255,.035); font-size:.8rem; }
+    .episode-nav { display:flex; justify-content:space-between; gap:16px; margin-top:34px; }
+    .episode-nav a { padding:12px 15px; border:1px solid var(--line); border-radius:10px; color:#b6ccdc; text-decoration:none; background:rgba(9,21,42,.7); }
+    .episode-nav a:hover,.episode-nav a:focus-visible { color:var(--cyan); border-color:var(--line-strong); }
+    footer { padding:32px 0 44px; border-top:1px solid var(--line); color:var(--muted); }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.source{transition:none}}
+    @media(max-width:780px){.layout{grid-template-columns:1fr;gap:30px}.toc{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}.toc b{grid-column:1/-1}.hero{padding:65px 0 50px}.source{grid-template-columns:42px 1fr}.arrow{display:none}.nav-actions a:first-child{display:none}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}.brand{font-size:.84rem}.back{font-size:.82rem}.hero{padding-top:52px}.layout{padding-top:48px}.toc{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.source{padding:16px;gap:12px}.source small{font-size:.76rem}.section-head{display:block}.count{display:block;margin-top:8px}.episode-nav{flex-direction:column}.footer-inner{display:block}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="../../" aria-label="RADAR CYBERSEC — início"><span class="brand-mark" aria-hidden="true"></span>RADAR CYBERSEC</a>
+    <div class="nav-actions"><a class="back" href="../ep03/">← Episódio 03</a><a class="back" href="../../">Voltar à home</a></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker">Episódio 04 · Fontes</div>
+        <h1>A supply chain virou o perímetro</h1>
+        <p class="intro">Referências utilizadas no compilado semanal de <strong>terça-feira, 8 de setembro, a segunda-feira, 14 de setembro de 2026</strong>. O radar prioriza o Brasil e inclui acontecimentos internacionais de alto impacto técnico, operacional ou estratégico.</p>
+        <div class="hero-meta"><span class="chip">Supply Chain</span><span class="chip">DevSecOps</span><span class="chip">Tier‑0</span><span class="chip">AI Agents</span><span class="chip">Cloud & soberania</span><span class="chip">Brasil</span></div>
+        <div class="stats" aria-label="Resumo da curadoria"><div class="stat"><strong>33</strong><span>referências validadas</span></div><div class="stat"><strong>4 eixos</strong><span>análise consolidada</span></div><div class="stat"><strong>7 dias</strong><span>8–14 de setembro</span></div></div>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <aside class="toc" aria-label="Índice das fontes"><b>Neste radar</b><a href="#brasil"><span>Brasil & soberania</span><small>05</small></a><a href="#cyber"><span>Cybersecurity & Tier‑0</span><small>11</small></a><a href="#ia"><span>IA & governança</span><small>07</small></a><a href="#mercado"><span>Mercado & datacenters</span><small>10</small></a><a href="#nota"><span>Nota editorial</span></a></aside>
+      <div class="content">
+        <section id="brasil">
+          <div class="section-head"><h2>Brasil, cloud & soberania digital</h2><span class="count">5 fontes</span></div>
+          <p class="section-note">Política industrial para datacenters, capacidade nacional de cloud e IA, segurança para modelos e a agenda brasileira de infraestrutura digital.</p>
+          <div class="source-list">
+            <a class="source" href="https://teletime.com.br/08/09/2026/abracloud-regulacao-fast-track-redata/" target="_blank" rel="noopener noreferrer"><span class="source-num">01</span><span><strong>AbraCloud propõe fast track e regulamentação em ondas para o Redata</strong><small>TELETIME · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.datacenterdynamics.com/br/not%C3%ADcias/magalu-cloud-registra-crescimento-de-mais-de-dez-vezes-na-receita-externa-e-amplia-portf%C3%B3lio-de-ia/" target="_blank" rel="noopener noreferrer"><span class="source-num">02</span><span><strong>Magalu Cloud amplia portfólio de IA e anuncia parceria com Alibaba Cloud</strong><small>Data Center Dynamics · 9 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www1.folha.uol.com.br/colunas/painelsa/2026/09/ntt-data-diz-que-investimento-em-seguranca-para-ia-deve-triplicar-ate-2029.shtml" target="_blank" rel="noopener noreferrer"><span class="source-num">03</span><span><strong>NTT DATA projeta que investimento em segurança para IA triplicará até 2029</strong><small>Folha de S.Paulo · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://datacenter.org.br/eventos-novo/" target="_blank" rel="noopener noreferrer"><span class="source-num">04</span><span><strong>Agenda ABDC: ecossistema brasileiro de datacenters se reúne em São Paulo</strong><small>Associação Brasileira de Data Center · 14 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.mindthesec.com.br/agenda" target="_blank" rel="noopener noreferrer"><span class="source-num">05</span><span><strong>Agenda oficial do Mind The Sec 2026</strong><small>Mind The Sec · programação de 14–17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="cyber">
+          <div class="section-head"><h2>Cybersecurity, supply chain & Tier‑0</h2><span class="count">11 fontes</span></div>
+          <p class="section-note">Exploração ativa atinge comércio digital, repositórios, ferramentas de acesso remoto, firewalls e controles que ocupam posições privilegiadas na infraestrutura.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.securityweek.com/adobe-commerce-zero-day-exploited-to-backdoor-online-stores/amp/" target="_blank" rel="noopener noreferrer"><span class="source-num">06</span><span><strong>Zero-day StyleSmuggler compromete lojas Adobe Commerce</strong><small>SecurityWeek · 7 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/amp/" target="_blank" rel="noopener noreferrer"><span class="source-num">07</span><span><strong>Adobe corrige mais de 170 falhas, incluindo o zero-day do Commerce</strong><small>SecurityWeek · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/microsoft-patches-record-974-vulnerabilities-including-two-exploited-zero-days/" target="_blank" rel="noopener noreferrer"><span class="source-num">08</span><span><strong>Microsoft corrige recorde de 974 falhas e dois zero-days explorados</strong><small>SecurityWeek · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/sap-patches-critical-extended-passport-processing-vulnerability/" target="_blank" rel="noopener noreferrer"><span class="source-num">09</span><span><strong>SAP corrige vulnerabilidade crítica no Extended Passport</strong><small>SecurityWeek · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/organizations-warned-of-cisco-secure-fmc-exploitation/amp/" target="_blank" rel="noopener noreferrer"><span class="source-num">10</span><span><strong>Cisco e CISA alertam para exploração do Secure FMC</strong><small>SecurityWeek · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/fortinet-code-execution-flaw-exploited-in-pivotc2-rat-attacks/amp/" target="_blank" rel="noopener noreferrer"><span class="source-num">11</span><span><strong>Falha Fortinet é explorada para implantar o RAT PivotC2</strong><small>SecurityWeek · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/amp/" target="_blank" rel="noopener noreferrer"><span class="source-num">12</span><span><strong>ShieldCrash contorna correções e mira o Microsoft Defender</strong><small>SecurityWeek · 11 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html" target="_blank" rel="noopener noreferrer"><span class="source-num">13</span><span><strong>CISA adiciona falhas exploradas de Artifactory, ScreenConnect e RouterOS ao KEV</strong><small>The Hacker News · 12 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.securityweek.com/modified-screenconnect-clients-used-in-worm-like-campaign/" target="_blank" rel="noopener noreferrer"><span class="source-num">14</span><span><strong>Clientes ScreenConnect modificados propagam campanha com comportamento de worm</strong><small>SecurityWeek · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html" target="_blank" rel="noopener noreferrer"><span class="source-num">15</span><span><strong>Falha CVSS 10 do GitLab recebe sondagens em ambiente real</strong><small>The Hacker News · 11 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.reuters.com/legal/litigation/revolut-confirms-sensitive-customer-data-breach-falling-fake-government-requests-2026-09-12/" target="_blank" rel="noopener noreferrer"><span class="source-num">16</span><span><strong>Revolut expõe dados após solicitações fraudulentas de domínio governamental</strong><small>Reuters · 12 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="ia">
+          <div class="section-head"><h2>IA, agentes & governança</h2><span class="count">7 fontes</span></div>
+          <p class="section-note">Agentes passam de assistentes a identidades privilegiadas: acessam aplicações, publicam conteúdo, coordenam ações e começam a operar transações.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.investing.com/news/stock-market-news/meta-launches-ai-agent-that-can-access-other-apps-to-send-emails-make-payments-4892258" target="_blank" rel="noopener noreferrer"><span class="source-num">17</span><span><strong>Meta lança agente Muse com acesso a e-mail, aplicações e pagamentos</strong><small>Reuters, via Investing.com · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.investing.com/news/economy-news/exclusiveopenais-rogue-agents-used-at-least-10-more-sites-for-unauthorized-comms-researchers-say-4894152" target="_blank" rel="noopener noreferrer"><span class="source-num">18</span><span><strong>Agentes da OpenAI usaram outros sites para comunicações não autorizadas</strong><small>Reuters, via Investing.com · 9 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://apnews.com/article/1f730a59284c718f2e758898748a8069" target="_blank" rel="noopener noreferrer"><span class="source-num">19</span><span><strong>Senadores abrem investigação sobre incidente da OpenAI na Hugging Face</strong><small>Associated Press · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.investing.com/news/stock-market-news/payment-firms-visa-mastercard-and-ant-international-team-up-on-ai-agent-trust-framework-4894891" target="_blank" rel="noopener noreferrer"><span class="source-num">20</span><span><strong>Visa, Mastercard e Ant criam estrutura de confiança para agentes de IA</strong><small>Reuters, via Investing.com · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.theguardian.com/technology/2026/sep/11/openai-agents-rubygems-malicious-packages" target="_blank" rel="noopener noreferrer"><span class="source-num">21</span><span><strong>Agentes testados pela OpenAI teriam publicado pacotes maliciosos no RubyGems</strong><small>The Guardian · 11 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener noreferrer"><span class="source-num">22</span><span><strong>Relatório de inteligência da Anthropic detalha abuso de Claude em operações cibernéticas</strong><small>Anthropic · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://apnews.com/article/d59552edcb27892d8ee4d98a48397706" target="_blank" rel="noopener noreferrer"><span class="source-num">23</span><span><strong>Líderes de IA pedem mais tempo para medidas de segurança acompanharem os modelos</strong><small>Associated Press · 12 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="mercado">
+          <div class="section-head"><h2>Mercado, cloud & datacenters</h2><span class="count">10 fontes</span></div>
+          <p class="section-note">A corrida por capacidade de IA conecta energia, soberania, custom silicon, dívida, resiliência física e execução financeira dos hyperscalers.</p>
+          <div class="source-list">
+            <a class="source" href="https://firmus.co/newsroom/firmus-surpasses-900-mw-contracted-capacity-adds-openai-as-anchor-customer-and-expands-into-malaysia" target="_blank" rel="noopener noreferrer"><span class="source-num">24</span><span><strong>Firmus supera 900 MW contratados e inclui OpenAI como cliente âncora</strong><small>Firmus · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://majujohor.bernama.com/news-en.php?id=2604678" target="_blank" rel="noopener noreferrer"><span class="source-num">25</span><span><strong>Datacenters podem responder por 9,3% da eletricidade da Malásia</strong><small>BERNAMA · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.capgemini.com/news/press-releases/most-organizations-say-full-digital-sovereignty-is-an-unrealistic-goal-as-businesses-prioritize-resilience-over-total-independence/" target="_blank" rel="noopener noreferrer"><span class="source-num">26</span><span><strong>Empresas priorizam resiliência sobre independência digital total</strong><small>Capgemini Research Institute · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.marketscreener.com/news/qualcomm-amazon-strike-4-billion-custom-chip-deal-ce785bd8df8bf022" target="_blank" rel="noopener noreferrer"><span class="source-num">27</span><span><strong>Qualcomm e Amazon fecham acordo de US$ 4 bilhões para chips customizados</strong><small>Reuters, via MarketScreener · 8 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://nvidianews.nvidia.com/news/nvidia-expands-ai-infrastructure-capacity-in-partnership-with-australias-data-center-ecosystem" target="_blank" rel="noopener noreferrer"><span class="source-num">28</span><span><strong>NVIDIA e parceiros projetam até 2 GW de capacidade de IA na Austrália</strong><small>NVIDIA · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.marketscreener.com/news/ai-boom-poses-new-financial-stability-risks-bis-head-says-ce785bdedb8cf524" target="_blank" rel="noopener noreferrer"><span class="source-num">29</span><span><strong>BIS alerta para riscos financeiros do boom de investimento em IA</strong><small>Reuters, via MarketScreener · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.al-monitor.com/originals/2026/09/exclusive-uae-revises-ai-data-center-plan-after-iranian-attacks-sources-say" target="_blank" rel="noopener noreferrer"><span class="source-num">30</span><span><strong>Emirados Árabes redesenham projeto de IA de 5 GW após ataques</strong><small>Reuters, via Al-Monitor · 11 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.investing.com/news/stock-market-news/oracles-quarterly-revenue-beats-estimates-as-ai-boom-drives-cloud-demand-4896875" target="_blank" rel="noopener noreferrer"><span class="source-num">31</span><span><strong>Backlog de cloud da Oracle chega a US$ 664 bilhões</strong><small>Reuters, via Investing.com · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.datacenterdynamics.com/en/news/microsoft-targets-38gw-of-data-center-capacity-in-2032-report/" target="_blank" rel="noopener noreferrer"><span class="source-num">32</span><span><strong>Microsoft planeja atingir 38 GW de capacidade de datacenters até 2032</strong><small>Data Center Dynamics · 11 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/" target="_blank" rel="noopener noreferrer"><span class="source-num">33</span><span><strong>d-Matrix adota NVLink Fusion para inferência em escala de rack</strong><small>NVIDIA · 10 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="nota">
+          <h2>Nota editorial</h2>
+          <div class="notice"><strong>Transparência:</strong> esta página reúne 33 referências validadas que sustentam o compilado do Episódio 04. Acontecimentos repetidos nos briefings diários foram deduplicados e consolidados em ordem cronológica. Fontes complementares foram mantidas apenas quando acrescentam confirmação oficial, contexto técnico ou uma etapa posterior relevante, como exploração ativa e correção. Links externos podem ser atualizados, movidos ou ficar sujeitos às políticas de acesso de seus publicadores.</div>
+          <div class="tags" style="margin-top:22px"><span class="tag">#RadarCyberSec</span><span class="tag">#Cybersecurity</span><span class="tag">#SupplyChainSecurity</span><span class="tag">#DevSecOps</span><span class="tag">#Tier0</span><span class="tag">#CloudSecurity</span><span class="tag">#AIAgents</span><span class="tag">#Datacenter</span><span class="tag">#SoberaniaDigital</span><span class="tag">#Brasil</span></div>
+          <nav class="episode-nav" aria-label="Navegação entre episódios"><a href="../ep03/">← Fontes do Episódio 03</a><a href="../../">Todos os episódios →</a></nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© 2026 RADAR CYBERSEC</span><a class="back" href="../../">radar-cybersec / início</a></div></footer>
+</body>
+</html>
