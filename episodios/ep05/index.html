@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Fontes e referências do Episódio 05 do RADAR CYBERSEC, de 15 a 21 de setembro de 2026.">
+  <title>Episódio 05 — Fontes | RADAR CYBERSEC</title>
+  <style>
+    :root { color-scheme:dark; --bg:#050914; --panel:#09152a; --panel2:#0b1c37; --line:rgba(80,190,255,.22); --line-strong:rgba(84,241,255,.48); --text:#e8f4ff; --muted:#91a9bf; --blue:#21b8ff; --cyan:#54f1ff; --violet:#8878ff; --max:1060px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 80% 0,rgba(33,184,255,.15),transparent 30rem),radial-gradient(circle at 0 60%,rgba(136,120,255,.09),transparent 34rem),var(--bg); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.15; background-image:linear-gradient(rgba(84,241,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(84,241,255,.07) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:850; letter-spacing:.08em; }
+    .brand-mark { width:32px; height:32px; border:1px solid var(--cyan); border-radius:50%; position:relative; box-shadow:0 0 22px rgba(84,241,255,.25); }
+    .brand-mark::before { content:""; position:absolute; inset:7px; border:1px solid rgba(84,241,255,.5); border-radius:50%; }
+    .nav-actions { display:flex; align-items:center; gap:18px; }
+    .back { color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .back:hover,.back:focus-visible { color:var(--cyan); }
+    .hero { padding:88px 0 66px; border-bottom:1px solid var(--line); }
+    .kicker { display:inline-flex; align-items:center; gap:10px; color:var(--cyan); font-size:.78rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .kicker::before { content:""; width:28px; height:1px; background:currentColor; box-shadow:0 0 8px currentColor; }
+    h1 { max-width:920px; margin:18px 0 22px; font-size:clamp(2.7rem,7vw,5.7rem); line-height:.98; letter-spacing:-.06em; }
+    .intro { max-width:820px; margin:0; color:#aec4d7; font-size:clamp(1.04rem,2vw,1.2rem); line-height:1.74; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .chip { padding:7px 11px; border:1px solid var(--line); border-radius:999px; color:#b3cde0; background:rgba(33,184,255,.05); font-size:.79rem; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:690px; margin-top:30px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(7,17,34,.62); }
+    .stat { padding:16px 18px; border-right:1px solid var(--line); }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; color:var(--cyan); font-size:1.35rem; line-height:1; }
+    .stat span { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:54px; padding:70px 0 92px; }
+    .toc { position:sticky; top:24px; align-self:start; padding:19px; border:1px solid var(--line); border-radius:14px; background:rgba(7,17,34,.82); backdrop-filter:blur(10px); }
+    .toc b { display:block; margin-bottom:11px; color:var(--cyan); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+    .toc a { display:flex; justify-content:space-between; gap:10px; padding:9px 0; color:var(--muted); text-decoration:none; font-size:.9rem; border-bottom:1px solid rgba(80,190,255,.1); }
+    .toc a:last-child { border-bottom:0; }
+    .toc a:hover,.toc a:focus-visible { color:var(--cyan); }
+    .toc small { color:#66839a; font-size:.75rem; }
+    .content section { scroll-margin-top:24px; margin-bottom:54px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+    h2 { margin:0; font-size:clamp(1.6rem,3vw,2.3rem); letter-spacing:-.035em; }
+    .count { flex:0 0 auto; color:var(--cyan); font-size:.72rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .section-note { margin:0 0 20px; color:var(--muted); line-height:1.62; }
+    .source-list { display:grid; gap:12px; }
+    .source { position:relative; display:grid; grid-template-columns:46px 1fr auto; gap:16px; align-items:center; padding:19px; border:1px solid var(--line); border-radius:14px; text-decoration:none; background:linear-gradient(135deg,rgba(11,28,55,.9),rgba(7,16,32,.75)); transition:transform .18s ease,border-color .18s ease,background .18s ease; }
+    .source:hover,.source:focus-visible { transform:translateY(-2px); border-color:var(--line-strong); background:linear-gradient(135deg,rgba(13,38,71,.96),rgba(7,19,38,.9)); outline:none; }
+    .source-num { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(84,241,255,.26); border-radius:11px; color:var(--cyan); font-size:.78rem; font-weight:850; background:rgba(33,184,255,.06); }
+    .source strong { display:block; margin-bottom:5px; line-height:1.35; }
+    .source small { color:var(--muted); line-height:1.45; }
+    .arrow { color:var(--cyan); font-size:1.2rem; }
+    .notice { padding:20px; border-left:3px solid var(--cyan); border-radius:0 12px 12px 0; background:rgba(33,184,255,.07); color:#b6cadb; line-height:1.65; }
+    .notice strong { color:var(--text); }
+    .tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .tag { padding:7px 11px; border:1px solid var(--line); border-radius:8px; color:#a9c5d9; background:rgba(84,241,255,.035); font-size:.8rem; }
+    .episode-nav { display:flex; justify-content:space-between; gap:16px; margin-top:34px; }
+    .episode-nav a { padding:12px 15px; border:1px solid var(--line); border-radius:10px; color:#b6ccdc; text-decoration:none; background:rgba(9,21,42,.7); }
+    .episode-nav a:hover,.episode-nav a:focus-visible { color:var(--cyan); border-color:var(--line-strong); }
+    footer { padding:32px 0 44px; border-top:1px solid var(--line); color:var(--muted); }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.source{transition:none}}
+    @media(max-width:780px){.layout{grid-template-columns:1fr;gap:30px}.toc{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}.toc b{grid-column:1/-1}.hero{padding:65px 0 50px}.source{grid-template-columns:42px 1fr}.arrow{display:none}.nav-actions a:first-child{display:none}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}.brand{font-size:.84rem}.back{font-size:.82rem}.hero{padding-top:52px}.layout{padding-top:48px}.toc{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.source{padding:16px;gap:12px}.source small{font-size:.76rem}.section-head{display:block}.count{display:block;margin-top:8px}.episode-nav{flex-direction:column}.footer-inner{display:block}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="../../" aria-label="RADAR CYBERSEC — início"><span class="brand-mark" aria-hidden="true"></span>RADAR CYBERSEC</a>
+    <div class="nav-actions"><a class="back" href="../ep04/">← Episódio 04</a><a class="back" href="../../">Voltar à home</a></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker">Episódio 05 · Fontes</div>
+        <h1>A infraestrutura virou o alvo</h1>
+        <p class="intro">Referências utilizadas no compilado semanal de <strong>terça-feira, 15 de setembro, a segunda-feira, 21 de setembro de 2026</strong>. O radar prioriza o Brasil e inclui somente acontecimentos internacionais de alto impacto técnico, operacional ou estratégico.</p>
+        <div class="hero-meta"><span class="chip">Infraestrutura crítica</span><span class="chip">Cybersecurity</span><span class="chip">Cloud</span><span class="chip">AI Compute</span><span class="chip">Soberania digital</span><span class="chip">Brasil</span></div>
+        <div class="stats" aria-label="Resumo da curadoria"><div class="stat"><strong>33</strong><span>referências validadas</span></div><div class="stat"><strong>4 eixos</strong><span>análise consolidada</span></div><div class="stat"><strong>7 dias</strong><span>15–21 de setembro</span></div></div>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <aside class="toc" aria-label="Índice das fontes"><b>Neste radar</b><a href="#brasil"><span>Brasil & soberania</span><small>08</small></a><a href="#cyber"><span>Cybersecurity & control planes</span><small>09</small></a><a href="#ia"><span>IA, agentes & governança</span><small>08</small></a><a href="#mercado"><span>Mercado & datacenters</span><small>08</small></a><a href="#nota"><span>Nota editorial</span></a></aside>
+      <div class="content">
+        <section id="brasil">
+          <div class="section-head"><h2>Brasil, infraestrutura & soberania digital</h2><span class="count">8 fontes</span></div>
+          <p class="section-note">O Redata sai do debate legislativo e entra na fase de execução, enquanto novos projetos de cloud, datacenters e computação quântica ampliam a discussão sobre capacidade nacional.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/setembro/regime-especial-de-tributacao-para-servicos-de-datacenter-e-sancionado" target="_blank" rel="noopener noreferrer"><span class="source-num">01</span><span><strong>Regime Especial de Tributação para Serviços de Datacenter é sancionado</strong><small>Ministério da Fazenda · 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.presidencia.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15504.htm" target="_blank" rel="noopener noreferrer"><span class="source-num">02</span><span><strong>Lei nº 15.504 institui o Redata e suas contrapartidas</strong><small>Presidência da República · 15 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/ambiente-tecnologico/nuvem/nuvem-brasileira" target="_blank" rel="noopener noreferrer"><span class="source-num">03</span><span><strong>Nuvem Brasileira: infraestrutura soberana para dados de governo</strong><small>Governo Digital · referência oficial</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://iqm.gcs-web.com/news-releases/news-release-details/iqm-deliver-its-first-quantum-computer-south-america-brazils" target="_blank" rel="noopener noreferrer"><span class="source-num">04</span><span><strong>IQM levará seu primeiro computador quântico da América do Sul a Campinas</strong><small>IQM Quantum Computers · 17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://convergenciadigital.com.br/governo/eveo-anuncia-data-center-tier-iii-em-recife/" target="_blank" rel="noopener noreferrer"><span class="source-num">05</span><span><strong>EVEO anuncia datacenter Tier III em Recife</strong><small>Convergência Digital · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://rn.agenciasebrae.com.br/inovacao-e-tecnologia/sebrae-rn-tera-datacenter-para-armazenar-dados-de-pequenos-negocios-de-12-estados/" target="_blank" rel="noopener noreferrer"><span class="source-num">06</span><span><strong>Sebrae-RN terá datacenter de R$ 70 milhões para dados de 12 estados</strong><small>Agência Sebrae de Notícias · 19 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://tribunadonorte.com.br/politica/redata-amplia-vantagem-do-nordeste-com-data-centers/" target="_blank" rel="noopener noreferrer"><span class="source-num">07</span><span><strong>Redata amplia vantagem do Nordeste, mas ICMS ainda exige decisão</strong><small>Tribuna do Norte · 19 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://teletime.com.br/18/09/2026/empresas-pressao-governanca-ia/" target="_blank" rel="noopener noreferrer"><span class="source-num">08</span><span><strong>Empresas ampliam a pressão por governança prática de IA no Brasil</strong><small>TELETIME · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="cyber">
+          <div class="section-head"><h2>Cybersecurity, exploração ativa & control planes</h2><span class="count">9 fontes</span></div>
+          <p class="section-note">Falhas em gateways, acesso remoto, identidade, backup e kernel reforçam o mesmo padrão: atacantes buscam controles com alto privilégio e alcance operacional.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-esa-inj-2bLVGmhX.html" target="_blank" rel="noopener noreferrer"><span class="source-num">09</span><span><strong>Cisco corrige falha explorada no Secure Email Gateway</strong><small>Cisco · CVE-2026-76461 · 15 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.connectwise.com/company/trust/security-bulletins/2026-09-08-screenconnect-bulletin" target="_blank" rel="noopener noreferrer"><span class="source-num">10</span><span><strong>ConnectWise atualiza boletim de segurança do ScreenConnect</strong><small>ConnectWise · atualização em 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.cyber.gov.au/business-government/detecting-responding-to-threats/detecting-and-mitigating-active-directory-compromises" target="_blank" rel="noopener noreferrer"><span class="source-num">11</span><span><strong>Guia reúne técnicas para detectar e mitigar comprometimento do Active Directory</strong><small>Australian Signals Directorate · 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-ISE-ABP-VNSW7Tn5.html" target="_blank" rel="noopener noreferrer"><span class="source-num">12</span><span><strong>Cisco ISE sob exploração ativa exige atualização imediata</strong><small>Cisco · CVE-2026-76460 · 17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/" target="_blank" rel="noopener noreferrer"><span class="source-num">13</span><span><strong>Acronis alerta para exploração ativa em plugin de backup do cPanel</strong><small>BleepingComputer · 17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://source.android.com/docs/security/bulletin/pixel/2026/2026-09-01" target="_blank" rel="noopener noreferrer"><span class="source-num">14</span><span><strong>Boletim Pixel detalha correções para vulnerabilidades exploradas</strong><small>Android Security · setembro 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://community.checkpoint.com/t5/General-Topics/Important-Notification-Action-required-Critical-Security-Update/m-p/282409/highlight/true" target="_blank" rel="noopener noreferrer"><span class="source-num">15</span><span><strong>Check Point publica atualização crítica para servidores de gerenciamento</strong><small>Check Point · CVE-2026-91843 · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.cisa.gov/news-events/alerts/2026/09/18/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer"><span class="source-num">16</span><span><strong>CISA adiciona vulnerabilidades do kernel Linux ao catálogo KEV</strong><small>CISA · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html" target="_blank" rel="noopener noreferrer"><span class="source-num">17</span><span><strong>Três falhas do kernel Linux entram no radar de exploração ativa</strong><small>The Hacker News · 20 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="ia">
+          <div class="section-head"><h2>IA, agentes & novas tecnologias</h2><span class="count">8 fontes</span></div>
+          <p class="section-note">Agentes autônomos já influenciam pesquisa, desenvolvimento e segurança. O salto de produtividade vem acompanhado por riscos de supervisão, identidade, supply chain e retenção de dados.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.investing.com/news/stock-market-news/palantir-nvidia-curb-ai-model-use-over-data-fears-the-information-reports-4899995" target="_blank" rel="noopener noreferrer"><span class="source-num">18</span><span><strong>Palantir e NVIDIA restringem uso de modelos por preocupações com dados</strong><small>Reuters, via Investing.com · 15 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.marketscreener.com/news/european-chip-startup-axelera-wins-ai-factory-supply-deals-and-launches-second-chip-ce785bdddd8af124" target="_blank" rel="noopener noreferrer"><span class="source-num">19</span><span><strong>Axelera fecha contratos para AI factories e apresenta novo chip de inferência</strong><small>Reuters, via MarketScreener · 15 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.bleepingcomputer.com/news/security/spains-data-agency-gets-first-report-of-ai-powered-data-breach/" target="_blank" rel="noopener noreferrer"><span class="source-num">20</span><span><strong>Espanha recebe primeiro relato de violação associada a agente de IA</strong><small>BleepingComputer · 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.rubrik.com/blog/technology/26/9/introducing-rubrik-code-guardian-attack-your-code-before-attackers-do" target="_blank" rel="noopener noreferrer"><span class="source-num">21</span><span><strong>Rubrik apresenta Code Guardian para testar código com agentes ofensivos</strong><small>Rubrik · 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.rubrik.com/company/newsroom/press-releases/26/rubrik-adds-new-mcp-support-to-expand-access-to-agentic-cyber-resilience" target="_blank" rel="noopener noreferrer"><span class="source-num">22</span><span><strong>Rubrik adiciona suporte a MCP para resiliência cibernética agentic</strong><small>Rubrik · 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.anthropic.com/institute/measuring-pace-of-ai-development" target="_blank" rel="noopener noreferrer"><span class="source-num">23</span><span><strong>Claude já lidera 26% do trabalho de P&amp;D de modelos na Anthropic</strong><small>Anthropic Institute · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.reuters.com/business/gemini-hacked-three-companies-first-known-breakout-by-google-ai-wsj-reports-2026-09-18/" target="_blank" rel="noopener noreferrer"><span class="source-num">24</span><span><strong>Gemini compromete três empresas em teste de segurança conduzido pelo Google</strong><small>Reuters · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.anthropic.com/news/accenture-embedded-evaluation" target="_blank" rel="noopener noreferrer"><span class="source-num">25</span><span><strong>Anthropic e Accenture formam equipe para avaliações incorporadas de IA</strong><small>Anthropic · 20 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="mercado">
+          <div class="section-head"><h2>Mercado, cloud & datacenters</h2><span class="count">8 fontes</span></div>
+          <p class="section-note">Compute escasso, preços maiores, capital recorde e risco físico convergem: infraestrutura de IA virou ativo estratégico, gargalo financeiro e superfície de continuidade.</p>
+          <div class="source-list">
+            <a class="source" href="https://www.marketscreener.com/news/china-s-huawei-sets-2027-launch-for-new-ai-chips-as-it-targets-nvidia-ce785bd3d98ef725" target="_blank" rel="noopener noreferrer"><span class="source-num">26</span><span><strong>Huawei afirma que demanda por compute de IA supera sua capacidade de oferta</strong><small>Reuters, via MarketScreener · 17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.investing.com/news/stock-market-news/nebius-hikes-ai-cloud-prices-again-demand-computing-power-soars-4906125" target="_blank" rel="noopener noreferrer"><span class="source-num">27</span><span><strong>Nebius aumenta novamente os preços de sua cloud de IA</strong><small>Reuters, via Investing.com · 17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.globenewswire.com/news-release/2026/09/17/3364326/0/en/crusoe-raises-3-9-billion-series-f-for-its-vertically-integrated-ai-infrastructure-platform.html" target="_blank" rel="noopener noreferrer"><span class="source-num">28</span><span><strong>Crusoe levanta US$ 3,9 bilhões para infraestrutura verticalizada de IA</strong><small>Crusoe · 17 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.tomshardware.com/tech-industry/data-centers/amazon-reportedly-tells-customers-in-abu-dhabi-and-bahrain-to-find-safer-harbors-for-their-data-aws-has-no-timeline-for-resuming-operations-six-months-after-drone-strikes-damaged-data-centers-in-the-region" target="_blank" rel="noopener noreferrer"><span class="source-num">29</span><span><strong>AWS recomenda migração após danos físicos prolongados no Oriente Médio</strong><small>Tom's Hardware · 16 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.reuters.com/technology/ai-cloud-firm-nscale-files-us-ipo-2026-09-18/" target="_blank" rel="noopener noreferrer"><span class="source-num">30</span><span><strong>Nscale protocola pedido de IPO nos Estados Unidos</strong><small>Reuters · 18 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://commission.europa.eu/news-and-media/news/making-data-centres-energy-efficient-thanks-new-eu-rating-system-2026-09-21_en" target="_blank" rel="noopener noreferrer"><span class="source-num">31</span><span><strong>União Europeia propõe classificação de eficiência para datacenters</strong><small>Comissão Europeia · 21 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://newsroom.kuehne-nagel.com/kuehnenagel-announces-long-term-strategic-collaboration-with-amazon/" target="_blank" rel="noopener noreferrer"><span class="source-num">32</span><span><strong>Kuehne+Nagel assume papel estratégico na expansão logística da Amazon e AWS</strong><small>Kuehne+Nagel · 21 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="source" href="https://www.axios.com/2026/09/21/ai-finance-credit-circular" target="_blank" rel="noopener noreferrer"><span class="source-num">33</span><span><strong>Financiamento da infraestrutura de IA forma uma cadeia cada vez mais interdependente</strong><small>Axios · 21 set 2026</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section id="nota">
+          <h2>Nota editorial</h2>
+          <div class="notice"><strong>Transparência:</strong> esta página reúne 33 referências validadas que sustentam o compilado do Episódio 05. Acontecimentos repetidos nos briefings diários foram deduplicados e consolidados em ordem cronológica. Fontes complementares foram mantidas apenas quando acrescentam confirmação oficial, contexto técnico ou uma etapa posterior relevante, como exploração ativa e correção. Links externos podem ser atualizados, movidos ou ficar sujeitos às políticas de acesso de seus publicadores.</div>
+          <div class="tags" style="margin-top:22px"><span class="tag">#RadarCyberSec</span><span class="tag">#Cybersecurity</span><span class="tag">#InfraestruturaCritica</span><span class="tag">#CloudSecurity</span><span class="tag">#AICompute</span><span class="tag">#AIAgents</span><span class="tag">#Datacenter</span><span class="tag">#Redata</span><span class="tag">#SoberaniaDigital</span><span class="tag">#Brasil</span></div>
+          <nav class="episode-nav" aria-label="Navegação entre episódios"><a href="../ep04/">← Fontes do Episódio 04</a><a href="../../">Todos os episódios →</a></nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© 2026 RADAR CYBERSEC</span><a class="back" href="../../">radar-cybersec / início</a></div></footer>
+</body>
+</html>
