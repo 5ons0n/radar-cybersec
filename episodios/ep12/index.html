@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Fontes do Episódio 12 do RADAR CYBERSEC. Curadoria de 3 a 9 de novembro de 2026.">
+  <title>Episódio 12 — Fontes | RADAR CYBERSEC</title>
+  <style>
+    :root { color-scheme:dark; --bg:#050914; --panel:#09152a; --panel2:#0b1c37; --line:rgba(80,190,255,.22); --line-strong:rgba(84,241,255,.48); --text:#e8f4ff; --muted:#91a9bf; --blue:#21b8ff; --cyan:#54f1ff; --violet:#8878ff; --max:1060px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 80% 0,rgba(33,184,255,.15),transparent 30rem),radial-gradient(circle at 0 60%,rgba(136,120,255,.09),transparent 34rem),var(--bg); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.15; background-image:linear-gradient(rgba(84,241,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(84,241,255,.07) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:850; letter-spacing:.08em; }
+    .brand-mark { width:32px; height:32px; border:1px solid var(--cyan); border-radius:50%; position:relative; box-shadow:0 0 22px rgba(84,241,255,.25); }
+    .brand-mark::before { content:""; position:absolute; inset:7px; border:1px solid rgba(84,241,255,.5); border-radius:50%; }
+    .nav-actions { display:flex; align-items:center; gap:18px; }
+    .back { color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .back:hover,.back:focus-visible { color:var(--cyan); }
+    .hero { padding:88px 0 66px; border-bottom:1px solid var(--line); }
+    .kicker { display:inline-flex; align-items:center; gap:10px; color:var(--cyan); font-size:.78rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .kicker::before { content:""; width:28px; height:1px; background:currentColor; box-shadow:0 0 8px currentColor; }
+    h1 { max-width:920px; margin:18px 0 22px; font-size:clamp(2.7rem,7vw,5.7rem); line-height:.98; letter-spacing:-.06em; }
+    .intro { max-width:820px; margin:0; color:#aec4d7; font-size:clamp(1.04rem,2vw,1.2rem); line-height:1.74; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .chip { padding:7px 11px; border:1px solid var(--line); border-radius:999px; color:#b3cde0; background:rgba(33,184,255,.05); font-size:.79rem; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:690px; margin-top:30px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(7,17,34,.62); }
+    .stat { padding:16px 18px; border-right:1px solid var(--line); }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; color:var(--cyan); font-size:1.35rem; line-height:1; }
+    .stat span { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:54px; padding:70px 0 92px; }
+    .toc { position:sticky; top:24px; align-self:start; padding:19px; border:1px solid var(--line); border-radius:14px; background:rgba(7,17,34,.82); backdrop-filter:blur(10px); }
+    .toc b { display:block; margin-bottom:11px; color:var(--cyan); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+    .toc a { display:flex; justify-content:space-between; gap:10px; padding:9px 0; color:var(--muted); text-decoration:none; font-size:.9rem; border-bottom:1px solid rgba(80,190,255,.1); }
+    .toc a:last-child { border-bottom:0; }
+    .toc a:hover,.toc a:focus-visible { color:var(--cyan); }
+    .toc small { color:#66839a; font-size:.75rem; }
+    .content section { scroll-margin-top:24px; margin-bottom:54px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+    h2 { margin:0; font-size:clamp(1.6rem,3vw,2.3rem); letter-spacing:-.035em; }
+    .count { flex:0 0 auto; color:var(--cyan); font-size:.72rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .section-note { margin:0 0 20px; color:var(--muted); line-height:1.62; }
+    .source-list { display:grid; gap:12px; }
+    .source { position:relative; display:grid; grid-template-columns:46px 1fr auto; gap:16px; align-items:center; padding:19px; border:1px solid var(--line); border-radius:14px; text-decoration:none; background:linear-gradient(135deg,rgba(11,28,55,.9),rgba(7,16,32,.75)); transition:transform .18s ease,border-color .18s ease,background .18s ease; }
+    .source:hover,.source:focus-visible { transform:translateY(-2px); border-color:var(--line-strong); background:linear-gradient(135deg,rgba(13,38,71,.96),rgba(7,19,38,.9)); outline:none; }
+    .source-num { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(84,241,255,.26); border-radius:11px; color:var(--cyan); font-size:.78rem; font-weight:850; background:rgba(33,184,255,.06); }
+    .source strong { display:block; margin-bottom:5px; line-height:1.35; }
+    .source small { color:var(--muted); line-height:1.45; }
+    .arrow { color:var(--cyan); font-size:1.2rem; }
+    .notice { padding:20px; border-left:3px solid var(--cyan); border-radius:0 12px 12px 0; background:rgba(33,184,255,.07); color:#b6cadb; line-height:1.65; }
+    .notice strong { color:var(--text); }
+    .tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .tag { padding:7px 11px; border:1px solid var(--line); border-radius:8px; color:#a9c5d9; background:rgba(84,241,255,.035); font-size:.8rem; }
+    .episode-nav { display:flex; justify-content:space-between; gap:16px; margin-top:34px; }
+    .episode-nav a { padding:12px 15px; border:1px solid var(--line); border-radius:10px; color:#b6ccdc; text-decoration:none; background:rgba(9,21,42,.7); }
+    .episode-nav a:hover,.episode-nav a:focus-visible { color:var(--cyan); border-color:var(--line-strong); }
+    footer { padding:32px 0 44px; border-top:1px solid var(--line); color:var(--muted); }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.source{transition:none}}
+    @media(max-width:780px){.layout{grid-template-columns:1fr;gap:30px}.toc{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}.toc b{grid-column:1/-1}.hero{padding:65px 0 50px}.source{grid-template-columns:42px 1fr}.arrow{display:none}.nav-actions a:first-child{display:none}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}.brand{font-size:.84rem}.back{font-size:.82rem}.hero{padding-top:52px}.layout{padding-top:48px}.toc{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.source{padding:16px;gap:12px}.source small{font-size:.76rem}.section-head{display:block}.count{display:block;margin-top:8px}.episode-nav{flex-direction:column}.footer-inner{display:block}}
+  </style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="../../" aria-label="RADAR CYBERSEC — início"><span class="brand-mark" aria-hidden="true"></span>RADAR CYBERSEC</a>
+  <div class="nav-actions"><a class="back" href="../ep11/">← Episódio 11</a><a class="back" href="../../">Voltar à home</a></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">Episódio 12 · Fontes</div>
+      <h1>De cookies roubados a datacenters sem energia</h1>
+      <p class="intro">Referências do relatório semanal de <strong>3 a 9 de novembro de 2026</strong>. Dos acessos a câmeras no Brasil à disputa por conexão elétrica, a edição reúne os riscos de identidade, exploração ativa e capacidade de infraestrutura.</p>
+      <div class="hero-meta"><span class="chip">Brasil</span><span class="chip">Identidade</span><span class="chip">Exploração ativa</span><span class="chip">Cloud</span><span class="chip">Energia</span><span class="chip">IA</span></div>
+      <div class="stats" aria-label="Resumo da curadoria">
+        <div class="stat"><strong>36</strong><span>destinos únicos no PDF</span></div>
+        <div class="stat"><strong>6 eixos</strong><span>curadoria consolidada</span></div>
+        <div class="stat"><strong>7 dias</strong><span>3–9 de novembro</span></div>
+      </div>
+      <div class="episode-nav">
+        <a href="https://open.spotify.com/show/3WSlHMgby0l0RoaxMZhR7s" target="_blank" rel="noopener noreferrer">Programa no Spotify ↗</a>
+        <a href="https://whatsapp.com/channel/0029Vb8OzVZG3R3pOEjoi741" target="_blank" rel="noopener noreferrer">Notícias diárias no WhatsApp ↗</a>
+      </div>
+    </div>
+  </section>
+  <div class="wrap layout">
+    <aside class="toc" aria-label="Índice das fontes">
+      <b>Neste radar</b>
+      <a href="#brasil"><span>Brasil, governança e infraestrutura crítica</span><small>5</small></a>
+      <a href="#identidade"><span>Identidade, sessões e privacidade</span><small>4</small></a>
+      <a href="#cyber"><span>Vulnerabilidades e exploração ativa</span><small>13</small></a>
+      <a href="#energia"><span>Cloud, datacenters e energia</span><small>5</small></a>
+      <a href="#ia"><span>IA e segurança</span><small>4</small></a>
+      <a href="#mercado"><span>Mercado e financiamento de compute</span><small>5</small></a>
+      <a href="#nota"><span>Nota editorial</span></a>
+    </aside>
+    <div class="content">
+    <section id="brasil">
+      <div class="section-head"><h2>Brasil, governança e infraestrutura crítica</h2><span class="count">5 fontes</span></div>
+      <p class="section-note">Política Nacional de Cibersegurança, cooperação GSI–Anatel e o projeto de datacenter público operado pela Telebras.</p>
+      <div class="source-list">
+        <a class="source" href="https://portal.tcu.gov.br/imprensa/noticias/tribunal-monitora-recomendacao-ao-gsi-sobre-politica-nacional-de-ciberseguranca" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">01</span>
+          <span><strong>TCU · Tribunal monitora recomendacao ao GSI sobre Politica Nacional de Ciberseguranca</strong><small>R01 · 06/11/2026 · portal.tcu.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://pesquisa.apps.tcu.gov.br/documento/acordao-completo/%2A/NUMACORDAO%253A2909%2520ANOACORDAO%253A2026/DTRELEVANCIA%2520desc%252C%2520NUMACORDAOINT%2520desc%252C%2520COPIACOLEGIADO%2520desc/0" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">02</span>
+          <span><strong>TCU · Acordao 2909/2026 - Plenario</strong><small>R02 · 21/10/2026 · pesquisa.apps.tcu.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.gov.br/gsi/pt-br/centrais-de-conteudo/noticias/2026/gsi-e-anatel-firmam-acordo-para-fortalecer-a-seguranca-cibernetica-e-a-protecao-de-infraestruturas-criticas-no-brasil" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">03</span>
+          <span><strong>GSI · GSI e Anatel firmam acordo para fortalecer seguranca cibernetica</strong><small>R04 · 05/11/2026 · www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://teletime.com.br/04/11/2026/anatel-data-center-telebras/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">04</span>
+          <span><strong>TELETIME · Anatel aprova data center de R$ 375 milhoes</strong><small>R08 · 04/11/2026 · teletime.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.gov.br/mcom/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/rede-privativa" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">05</span>
+          <span><strong>MCom · Rede Privativa de Comunicacao da Administracao Publica Federal</strong><small>R09 · Acesso em 09/11/2026 · www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="identidade">
+      <div class="section-head"><h2>Identidade, sessões e privacidade</h2><span class="count">4 fontes</span></div>
+      <p class="section-note">Smart Sampa, Fullcam e Monuv. Exposição de links, credenciais e sessões em sistemas de videomonitoramento.</p>
+      <div class="source-list">
+        <a class="source" href="https://noticias.uol.com.br/colunas/artur-rodrigues/2026/11/03/nova-falha-no-smart-sampa-permite-acesso-a-17-mil-cameras-conveniadas.htm" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">06</span>
+          <span><strong>UOL · Nova falha no Smart Sampa permite acesso a 17 mil cameras</strong><small>R05 · 03/11/2026 · noticias.uol.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://direitosnarede.org.br/2026/11/05/oficio-cdr-representacao-violacoes-direitos-reiterados-incidentes-de-seguranca-smart-sampa/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">07</span>
+          <span><strong>Coalizao Direitos na Rede · Representacao sobre o Smart Sampa</strong><small>R06 · 05/11/2026 · direitosnarede.org.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/05/pedido-investigacao-mpsp-smart-sampa.ghtm" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">08</span>
+          <span><strong>UOL · Organizacoes pedem suspensao do Smart Sampa</strong><small>R07 · 05/11/2026 · noticias.uol.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://noticias.uol.com.br/colunas/artur-rodrigues/2026/11/09/vazamento-de-credenciais-expoe-cameras-privadas-em-todas-as-regioes-do-pais.ghtm" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">09</span>
+          <span><strong>UOL · Credenciais expoem cameras privadas em todas as regioes</strong><small>R23 · 09/11/2026 · noticias.uol.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="cyber">
+      <div class="section-head"><h2>Vulnerabilidades e exploração ativa</h2><span class="count">13 fontes</span></div>
+      <p class="section-note">Alertas, correções e catálogo KEV para SonicWall, WordPress, Apple e QNAP.</p>
+      <div class="source-list">
+        <a class="source" href="https://www.sonicwall.com/support/notices/sonicos-7-3-4-and-8-2-3-security-advisory-gen-7-and-gen-8-firewalls/kA1VN000002eBLN0A2" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">10</span>
+          <span><strong>SonicWall · SonicOS 7.3.4 and 8.2.3 Security Advisory</strong><small>R10 · 06/11/2026 · www.sonicwall.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-19868" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">11</span>
+          <span><strong>CISA · KEV CVE-2026-19868</strong><small>R11 · 06/11/2026 · www.cisa.gov</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.cyber.gc.ca/en/alerts-advisories/sonicwall-security-advisory-av26-1133" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">12</span>
+          <span><strong>Canadian Centre for Cyber Security · SonicWall advisory AV26-1133</strong><small>R12 · 06/11/2026 · www.cyber.gc.ca</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://wordpress.org/news/2026/10/wordpress-7-1-4/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">13</span>
+          <span><strong>WordPress · WordPress 7.1.4</strong><small>R13 · Outubro/2026 · wordpress.org</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-119977" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">14</span>
+          <span><strong>CISA · KEV CVE-2026-119977</strong><small>R14 · 03/11/2026 · www.cisa.gov</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.cyber.gc.ca/en/alerts-advisories/wordpress-security-advisory-av26-1117" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">15</span>
+          <span><strong>Canadian Centre for Cyber Security · WordPress advisory AV26-1117</strong><small>R15 · 03/11/2026 · www.cyber.gc.ca</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2024-27834" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">16</span>
+          <span><strong>CISA · KEV CVE-2024-27834</strong><small>R16 · 04/11/2026 · www.cisa.gov</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://support.apple.com/pt-br/120898" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">17</span>
+          <span><strong>Apple · iOS 16.7.8 and iPadOS 16.7.8 security content</strong><small>R17 · 13/05/2024 · support.apple.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://support.apple.com/en-us/120896" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">18</span>
+          <span><strong>Apple · Safari 17.5 security content</strong><small>R18 · 13/05/2024 · support.apple.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.qnap.com/en-us/security-news/2026/qnap-security-update-php2shell-vulnerabilities-resolved-in-qts-quts-hero-and-qutscloud" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">19</span>
+          <span><strong>QNAP · PHP2Shell security update</strong><small>R19 · 02/11/2026 · www.qnap.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.qnap.com/en-au/security-advisory/qsa-26-18" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">20</span>
+          <span><strong>QNAP · QSA-26-18</strong><small>R20 · 2026 · www.qnap.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.qnap.com/en/security-advisory/qsa-26-19" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">21</span>
+          <span><strong>QNAP · QSA-26-19</strong><small>R21 · 2026 · www.qnap.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.qnap.com/pt-br/how-to/faq/article/how-to-fix-the-php2shell-vulnerability-on-qnap-nas" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">22</span>
+          <span><strong>QNAP · Como corrigir PHP2Shell no QNAP NAS</strong><small>R22 · 2026 · www.qnap.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="energia">
+      <div class="section-head"><h2>Cloud, datacenters e energia</h2><span class="count">5 fontes</span></div>
+      <p class="section-note">Conexão à rede elétrica, geração, aceitação local e compromissos de capacidade.</p>
+      <div class="source-list">
+        <a class="source" href="https://www.reuters.com/business/energy/norways-statnett-pauses-new-grid-capacity-data-centres-protect-power-system-2026-11-09/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">23</span>
+          <span><strong>Reuters · Norway reins in data centre industry amid AI boom</strong><small>R24 · 09/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">24</span>
+          <span><strong>Financial Times · Anthropic strikes $3.4bn generator deal</strong><small>R25 · 08/11/2026 · www.ft.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.reuters.com/business/energy/anthropic-secures-34-billion-generator-deal-ai-data-centers-ft-reports-2026-11-08/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">25</span>
+          <span><strong>Reuters · Anthropic secures generator deal, FT reports</strong><small>R03 e R26 · 08/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.reuters.com/world/europe/activists-breach-microsoft-data-centre-construction-site-protests-spread-europe-2026-11-06/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">26</span>
+          <span><strong>Reuters · Activists enter Microsoft data centre construction site</strong><small>R27 · 06/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.reuters.com/technology/microsoft-rejects-multibillion-dollar-ai-deal-with-uks-nscale-ft-reports-2026-11-05/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">27</span>
+          <span><strong>Reuters · Microsoft will not expand Nscale Texas deal</strong><small>R28 · 05/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="ia">
+      <div class="section-head"><h2>IA e segurança</h2><span class="count">4 fontes</span></div>
+      <p class="section-note">Pesquisa de vulnerabilidades com GPT‑6 Cyber, avaliação de segurança e sandbox da ANPD.</p>
+      <div class="source-list">
+        <a class="source" href="https://openai.com/index/introducing-gpt-6-cyber/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">28</span>
+          <span><strong>OpenAI · GPT-6 Cyber</strong><small>R29 · 05/11/2026 · openai.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://deploymentsafety.openai.com/gpt-6-cyber" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">29</span>
+          <span><strong>OpenAI · GPT-6 Cyber System Card</strong><small>R30 · 05/11/2026 · deploymentsafety.openai.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://openai.com/pt-BR/index/a-thousand-fewer-paths-to-root/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">30</span>
+          <span><strong>OpenAI · A thousand fewer paths to root</strong><small>R31 · 04/11/2026 · openai.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-publica-os-tres-ultimos-relatorios-parciais-de-monitoramento-do-sandbox-em-ia-e-protecao-de-dados" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">31</span>
+          <span><strong>ANPD · Relatorios do Sandbox em IA e protecao de dados</strong><small>R32 · 04/11/2026 · www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="mercado">
+      <div class="section-head"><h2>Mercado e financiamento de compute</h2><span class="count">5 fontes</span></div>
+      <p class="section-note">Compromissos de compute, diligência de credores e diversificação de aceleradores.</p>
+      <div class="source-list">
+        <a class="source" href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">32</span>
+          <span><strong>U.S. SEC · Anthropic Form S-1/A</strong><small>R33 · 02/11/2026 · www.sec.gov</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.reuters.com/business/anthropics-quarterly-loss-shrinks-revenue-jumps-ahead-blockbuster-ipo-2026-11-02/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">33</span>
+          <span><strong>Reuters · Anthropic compute financing risks ahead of IPO</strong><small>R34 · 02/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.reuters.com/legal/transactional/banks-investors-grow-wary-ai-debt-spooked-by-market-selloff-2026-11-09/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">34</span>
+          <span><strong>Reuters · Banks and investors grow wary of AI debt</strong><small>R35 · 09/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.reuters.com/business/alphabet-discloses-548-million-worth-qualcomm-stake-2026-11-06/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">35</span>
+          <span><strong>Reuters · Alphabet takes $548 million Qualcomm stake</strong><small>R36 · 06/11/2026 · www.reuters.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://investor.qualcomm.com/files/content_files/FY2026-4th-Quarter-Earnings-Release.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">36</span>
+          <span><strong>Qualcomm · FY2026 4th Quarter Earnings Release</strong><small>R37 · FY2026 Q4 · investor.qualcomm.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="nota">
+      <h2>Nota editorial</h2>
+      <div class="notice" style="margin-top:20px">
+        <p>O resumo do relatório informa 41 fontes. A seção de referências enumera 37 entradas, de R01 a R37, que apontam para 36 endereços distintos. R03 e R26 remetem à mesma matéria da Reuters e aparecem em um único cartão, com os dois códigos. Os 42 hyperlinks no PDF também incluem repetições de endereços quebrados em mais de uma linha.</p>
+        <p>As datas seguem o registro bibliográfico do relatório. Para consulta complementar sobre a pausa de novas reservas de capacidade elétrica na Noruega, veja o <a href="https://www.statnett.no/om-statnett/nyheter-og-pressemeldinger/nyhetsarkiv-2026/midlertidige-tiltak-for-fortsatt-forsvarlig-systemdrift/" target="_blank" rel="noopener noreferrer">comunicado oficial da Statnett ↗</a>.</p>
+      </div>
+      <nav class="episode-nav" aria-label="Navegação entre episódios"><a href="../ep11/">← Fontes do Episódio 11</a><a href="../../">Todos os episódios →</a></nav>
+    </section>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap footer-inner"><span>© 2026 RADAR CYBERSEC</span><a class="back" href="../../">radar-cybersec / início</a></div></footer>
+</body>
+</html>
