@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Fontes do Episódio 13 do RADAR CYBERSEC. Curadoria de 10 a 16 de novembro de 2026.">
+  <title>Episódio 13 — Fontes | RADAR CYBERSEC</title>
+  <style>
+    :root { color-scheme:dark; --bg:#050914; --panel:#09152a; --panel2:#0b1c37; --line:rgba(80,190,255,.22); --line-strong:rgba(84,241,255,.48); --text:#e8f4ff; --muted:#91a9bf; --blue:#21b8ff; --cyan:#54f1ff; --violet:#8878ff; --max:1060px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at 80% 0,rgba(33,184,255,.15),transparent 30rem),radial-gradient(circle at 0 60%,rgba(136,120,255,.09),transparent 34rem),var(--bg); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.15; background-image:linear-gradient(rgba(84,241,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(84,241,255,.07) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:850; letter-spacing:.08em; }
+    .brand-mark { width:32px; height:32px; border:1px solid var(--cyan); border-radius:50%; position:relative; box-shadow:0 0 22px rgba(84,241,255,.25); }
+    .brand-mark::before { content:""; position:absolute; inset:7px; border:1px solid rgba(84,241,255,.5); border-radius:50%; }
+    .nav-actions { display:flex; align-items:center; gap:18px; }
+    .back { color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .back:hover,.back:focus-visible { color:var(--cyan); }
+    .hero { padding:88px 0 66px; border-bottom:1px solid var(--line); }
+    .kicker { display:inline-flex; align-items:center; gap:10px; color:var(--cyan); font-size:.78rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .kicker::before { content:""; width:28px; height:1px; background:currentColor; box-shadow:0 0 8px currentColor; }
+    h1 { max-width:920px; margin:18px 0 22px; font-size:clamp(2.7rem,7vw,5.7rem); line-height:.98; letter-spacing:-.06em; }
+    .intro { max-width:820px; margin:0; color:#aec4d7; font-size:clamp(1.04rem,2vw,1.2rem); line-height:1.74; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .chip { padding:7px 11px; border:1px solid var(--line); border-radius:999px; color:#b3cde0; background:rgba(33,184,255,.05); font-size:.79rem; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:690px; margin-top:30px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(7,17,34,.62); }
+    .stat { padding:16px 18px; border-right:1px solid var(--line); }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; color:var(--cyan); font-size:1.35rem; line-height:1; }
+    .stat span { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:54px; padding:70px 0 92px; }
+    .toc { position:sticky; top:24px; align-self:start; padding:19px; border:1px solid var(--line); border-radius:14px; background:rgba(7,17,34,.82); backdrop-filter:blur(10px); }
+    .toc b { display:block; margin-bottom:11px; color:var(--cyan); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+    .toc a { display:flex; justify-content:space-between; gap:10px; padding:9px 0; color:var(--muted); text-decoration:none; font-size:.9rem; border-bottom:1px solid rgba(80,190,255,.1); }
+    .toc a:last-child { border-bottom:0; }
+    .toc a:hover,.toc a:focus-visible { color:var(--cyan); }
+    .toc small { color:#66839a; font-size:.75rem; }
+    .content section { scroll-margin-top:24px; margin-bottom:54px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+    h2 { margin:0; font-size:clamp(1.6rem,3vw,2.3rem); letter-spacing:-.035em; }
+    .count { flex:0 0 auto; color:var(--cyan); font-size:.72rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .section-note { margin:0 0 20px; color:var(--muted); line-height:1.62; }
+    .source-list { display:grid; gap:12px; }
+    .source { position:relative; display:grid; grid-template-columns:46px 1fr auto; gap:16px; align-items:center; padding:19px; border:1px solid var(--line); border-radius:14px; text-decoration:none; background:linear-gradient(135deg,rgba(11,28,55,.9),rgba(7,16,32,.75)); transition:transform .18s ease,border-color .18s ease,background .18s ease; }
+    .source:hover,.source:focus-visible { transform:translateY(-2px); border-color:var(--line-strong); background:linear-gradient(135deg,rgba(13,38,71,.96),rgba(7,19,38,.9)); outline:none; }
+    .source-num { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(84,241,255,.26); border-radius:11px; color:var(--cyan); font-size:.78rem; font-weight:850; background:rgba(33,184,255,.06); }
+    .source strong { display:block; margin-bottom:5px; line-height:1.35; }
+    .source small { color:var(--muted); line-height:1.45; }
+    .arrow { color:var(--cyan); font-size:1.2rem; }
+    .notice { padding:20px; border-left:3px solid var(--cyan); border-radius:0 12px 12px 0; background:rgba(33,184,255,.07); color:#b6cadb; line-height:1.65; }
+    .notice strong { color:var(--text); }
+    .tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .tag { padding:7px 11px; border:1px solid var(--line); border-radius:8px; color:#a9c5d9; background:rgba(84,241,255,.035); font-size:.8rem; }
+    .episode-nav { display:flex; justify-content:space-between; gap:16px; margin-top:34px; }
+    .episode-nav a { padding:12px 15px; border:1px solid var(--line); border-radius:10px; color:#b6ccdc; text-decoration:none; background:rgba(9,21,42,.7); }
+    .episode-nav a:hover,.episode-nav a:focus-visible { color:var(--cyan); border-color:var(--line-strong); }
+    footer { padding:32px 0 44px; border-top:1px solid var(--line); color:var(--muted); }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.source{transition:none}}
+    @media(max-width:780px){.layout{grid-template-columns:1fr;gap:30px}.toc{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}.toc b{grid-column:1/-1}.hero{padding:65px 0 50px}.source{grid-template-columns:42px 1fr}.arrow{display:none}.nav-actions a:first-child{display:none}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}.brand{font-size:.84rem}.back{font-size:.82rem}.hero{padding-top:52px}.layout{padding-top:48px}.toc{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.source{padding:16px;gap:12px}.source small{font-size:.76rem}.section-head{display:block}.count{display:block;margin-top:8px}.episode-nav{flex-direction:column}.footer-inner{display:block}}
+  </style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="../../" aria-label="RADAR CYBERSEC — início"><span class="brand-mark" aria-hidden="true"></span>RADAR CYBERSEC</a>
+  <div class="nav-actions"><a class="back" href="../ep12/">← Episódio 12</a><a class="back" href="../../">Voltar à home</a></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">Episódio 13 · Fontes</div>
+      <h1>Como a redundância derrubou o Microsoft 365</h1>
+      <p class="intro">Referências do relatório semanal de <strong>10 a 16 de novembro de 2026</strong>. A edição acompanha a falha em cascata no gateway compartilhado do Microsoft 365 e suas consequências para a continuidade operacional.</p>
+      <div class="hero-meta"><span class="chip">Brasil</span><span class="chip">Identidade</span><span class="chip">Exploração ativa</span><span class="chip">Cloud</span><span class="chip">Continuidade</span><span class="chip">IA</span></div>
+      <div class="stats" aria-label="Resumo da curadoria">
+        <div class="stat"><strong>22</strong><span>referências do relatório</span></div>
+        <div class="stat"><strong>6 eixos</strong><span>curadoria consolidada</span></div>
+        <div class="stat"><strong>7 dias</strong><span>10–16 de novembro</span></div>
+      </div>
+      <div class="episode-nav">
+        <a href="https://open.spotify.com/show/3WSlHMgby0l0RoaxMZhR7s" target="_blank" rel="noopener noreferrer">Programa no Spotify ↗</a>
+        <a href="https://whatsapp.com/channel/0029Vb8OzVZG3R3pOEjoi741" target="_blank" rel="noopener noreferrer">Notícias diárias no WhatsApp ↗</a>
+      </div>
+    </div>
+  </section>
+  <div class="wrap layout">
+    <aside class="toc" aria-label="Índice das fontes">
+      <b>Neste radar</b>
+      <a href="#microsoft"><span>Microsoft 365 e continuidade</span><small>6</small></a>
+      <a href="#judiciario"><span>Impacto no Judiciário</span><small>3</small></a>
+      <a href="#brasil"><span>Brasil, incidentes e identidade</span><small>5</small></a>
+      <a href="#vulnerabilidades"><span>Vulnerabilidades com exploração conhecida</span><small>2</small></a>
+      <a href="#infraestrutura"><span>Cloud, edge e datacenters</span><small>3</small></a>
+      <a href="#ia"><span>IA, agentes e mercado</span><small>3</small></a>
+      <a href="#nota"><span>Nota editorial</span></a>
+    </aside>
+    <div class="content">
+    <section id="microsoft">
+      <div class="section-head"><h2>Microsoft 365 e continuidade</h2><span class="count">6 fontes</span></div>
+      <p class="section-note">Relatório preliminar, histórico de serviço e impactos operacionais.</p>
+      <div class="source-list">
+        <a class="source" href="https://office-watch.com/2026/microsoft-365-outage-explained/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">01</span>
+          <span><strong>Microsoft · PIR preliminar de 15/11, reproduzido pelo Office Watch</strong><small>office-watch.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">02</span>
+          <span><strong>Microsoft · Atualizações do Exchange Online arquivadas pela Universidade da Pensilvânia</strong><small>mailservices.isc.upenn.edu</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://its.gmu.edu/alerts/unplanned-outages/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">06</span>
+          <span><strong>George Mason University · Atualizações operacionais locais</strong><small>its.gmu.edu</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://azure.status.microsoft/en-us/status/history/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">07</span>
+          <span><strong>Microsoft · Histórico público de status do Azure</strong><small>azure.status.microsoft</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">18</span>
+          <span><strong>Microsoft · Painel administrativo de integridade de serviço (requer acesso)</strong><small>admin.microsoft.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://apnews.com/article/ca395c0f1e51af784b6d70afb6554f6a" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">19</span>
+          <span><strong>Associated Press · Restauração e relatos do Reino Unido, 14/11</strong><small>apnews.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="judiciario">
+      <div class="section-head"><h2>Impacto no Judiciário</h2><span class="count">3 fontes</span></div>
+      <p class="section-note">Portarias e registros de impacto no Brasil e na Colômbia.</p>
+      <div class="source-list">
+        <a class="source" href="https://s.oab.org.br/arquivos/2026/11/4591f528-ee47-4e9f-a877-d2c0f5cfe96b.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">03</span>
+          <span><strong>CNJ · Portaria Presidência nº 551, de 13/11 (PDF hospedado pela OAB)</strong><small>s.oab.org.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.tjba.jus.br/portal/nota-instabilidade-nos-servicos-da-microsoft/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">04</span>
+          <span><strong>TJBA · Nota de 13/11 sobre o impacto no tribunal</strong><small>www.tjba.jus.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://publicacionesprocesales.ramajudicial.gov.co/c/document_library/get_file?groupId=6098902&amp;uuid=282b5512-f502-c330-4328-74426616fa17" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">05</span>
+          <span><strong>Colômbia · Acordo PCSJA26-12615, de 13/11</strong><small>publicacionesprocesales.ramajudicial.gov.co</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="brasil">
+      <div class="section-head"><h2>Brasil, incidentes e identidade</h2><span class="count">5 fontes</span></div>
+      <p class="section-note">Porto de Santos, Caixa Vida e Previdência, Tesouro Nacional e Confea.</p>
+      <div class="source-list">
+        <a class="source" href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/porto-de-santos-sistemas-seguem-afetados-apos-ataque-cibernetico" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">08</span>
+          <span><strong>Agência Brasil · Confirmação da APS sobre o Porto de Santos, 10/11</strong><small>agenciabrasil.ebc.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.caixavidaeprevidencia.com.br/seguranca" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">09</span>
+          <span><strong>Caixa Vida e Previdência · Comunicado aos titulares</strong><small>www.caixavidaeprevidencia.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.gov.br/tesouronacional/pt-br/noticias/nota-a-imprensa-2" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">10</span>
+          <span><strong>Tesouro Nacional · Nota sobre acesso indevido</strong><small>www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.gov.br/tesouronacional/pt-br/noticias/comunicado-sobre-sistemas-do-tesouro-nacional" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">11</span>
+          <span><strong>Tesouro Nacional · Comunicado sobre os sistemas, 13/11</strong><small>www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.confea.org.br/incidente-de-seguranca-envolvendo-dados-cadastrais-no-sic" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">12</span>
+          <span><strong>Confea · Incidente no SIC, nota de 12/11</strong><small>www.confea.org.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="vulnerabilidades">
+      <div class="section-head"><h2>Vulnerabilidades com exploração conhecida</h2><span class="count">2 fontes</span></div>
+      <p class="section-note">Recomendações de defesa e priorização por exposição.</p>
+      <div class="source-list">
+        <a class="source" href="https://www.gov.br/gsi/pt-br/assuntos/ctir/recomendacoes/2026/recomendacao-23-2026" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">13</span>
+          <span><strong>CTIR Gov · Recomendação 23/2026 sobre o Outlook</strong><small>www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">14</span>
+          <span><strong>CISA · Catálogo de vulnerabilidades com exploração conhecida</strong><small>www.cisa.gov</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="infraestrutura">
+      <div class="section-head"><h2>Cloud, edge e datacenters</h2><span class="count">3 fontes</span></div>
+      <p class="section-note">Projeto Prisma, Infovias Estaduais Norte e capacidade em Curitiba.</p>
+      <div class="source-list">
+        <a class="source" href="https://www.gov.br/mcom/pt-br/noticias/2026/novembro/governo-do-brasil-investe-r-46-3-milhoes-em-tecnologia-nacional-para-tornar-data-centers-mais-seguros-e-sustentaveis" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">15</span>
+          <span><strong>MCom · R$ 46,3 milhões para o projeto Prisma</strong><small>www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.rnp.br/2026/11/12/projeto-infovias-estaduais-norte-avanca-em-ciberseguranca-e-na-oferta-de-servicos-digitais-para-instituicoes-da-regiao-norte/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">16</span>
+          <span><strong>RNP · Infovias Estaduais Norte, 12/11</strong><small>www.rnp.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://teletime.com.br/12/11/2026/astella-data-centers/" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">22</span>
+          <span><strong>TELETIME · Astella Data Centers em Curitiba, 12/11</strong><small>teletime.com.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="ia">
+      <div class="section-head"><h2>IA, agentes e mercado</h2><span class="count">3 fontes</span></div>
+      <p class="section-note">Governança de agentes, segurança de IA e oferta de capacidade na China.</p>
+      <div class="source-list">
+        <a class="source" href="https://united.mediaroom.com/news-releases?item=125496" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">17</span>
+          <span><strong>United Airlines · Política sobre agentes de terceiros, 11/11</strong><small>united.mediaroom.com</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/2026/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">20</span>
+          <span><strong>Inmetro · Cooperação Brasil-Europa em segurança de IA</strong><small>www.gov.br</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="source" href="https://www.hkex.com.hk/News/News-Centre/Equity-Market-Pulse/-/media/4D87A35B07E7447086F2DCBC0342535C.ashx" target="_blank" rel="noopener noreferrer">
+          <span class="source-num">21</span>
+          <span><strong>HKEX · Panorama de agentes e capacidade de IA na China</strong><small>www.hkex.com.hk</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="nota">
+      <h2>Nota editorial</h2>
+      <div class="notice" style="margin-top:20px">
+        <p>As 22 referências seguem a numeração do PDF. A análise da Microsoft usa o relatório preliminar do incidente e o histórico de integridade do Exchange Online. A intensidade do impacto variou por serviço e região. A janela de 23h50 corresponde à definição de impacto ativo do relatório preliminar.</p>
+      </div>
+      <nav class="episode-nav" aria-label="Navegação entre episódios"><a href="../ep12/">← Fontes do Episódio 12</a><a href="../../">Todos os episódios →</a></nav>
+    </section>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap footer-inner"><span>© 2026 RADAR CYBERSEC</span><a class="back" href="../../">radar-cybersec / início</a></div></footer>
+</body>
+</html>
